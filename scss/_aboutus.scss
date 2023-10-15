@@ -1,0 +1,71 @@
+/*#region ----------------- About Us */
+.description-section {
+  margin: 100px 0;
+  .image-content {
+    padding-left: 20px;
+    position: relative;
+    .img-inner {
+      img {
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+    .btn-play {
+      position: absolute;
+      top: 50%;
+      right: 50%;
+      transform: translate(50%, -50%);
+      width: 60px;
+      height: 60px;
+      @include displayFlex(flex, center, center);
+      font-size: 24px;
+      border-radius: 50%;
+      border: none;
+      background-color: $primary;
+      color: white;
+      transition: all 0.2s ease-in-out;
+      &:hover {
+        background-color: #006fc6;
+      }
+      &::after {
+        content: "";
+        opacity: 0;
+        @include displayFlex(flex, center, center);
+        flex-direction: row;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background: $primary;
+        border-radius: 100%;
+        animation-name: ripple;
+        animation-duration: 3s;
+        animation-delay: 0s;
+        animation-iteration-count: infinite;
+        animation-timing-function: cubic-bezier(0.65, 0, 0.34, 1);
+        z-index: -1;
+      }
+    }
+  }
+  .text-content {
+    .desc {
+      margin: 20px 0;
+      p {
+        text-align: justify;
+        color: $textDark;
+      }
+    }
+  }
+}
+@media (max-width: 992px) {
+  .description-section {
+    .image-content {
+      padding: 0;
+    }
+    .text-content {
+      margin-bottom: 25px;
+    }
+  }
+}
+/*#endregion -------------- About Us */

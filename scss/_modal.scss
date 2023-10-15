@@ -1,0 +1,24 @@
+/*#region ----------------- Modal Styles */
+.modal-content {
+  border-radius: 0;
+  border: none;
+}
+.modal-title {
+  display: flex;
+  color: $textDark;
+  font-size: 20px;
+  font-weight: 600;
+  .fi {
+    margin-left: 10px;
+    position: relative;
+    top: 1px;
+    font-size: 22px;
+    color: $textSilver;
+  }
+}
+.modal-header {
+  background-color: $background;
+  border-radius: 0;
+  border-bottom: none;
+}
+/*#endregion -------------- Modal Styles */

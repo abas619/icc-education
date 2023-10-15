@@ -1,0 +1,416 @@
+/*#region ----------------- Navbar */
+.myNavbar {
+  background-color: white;
+  width: 100%;
+  padding: 8px 0;
+  z-index: 120;
+  position: absolute;
+  top: 0;
+  right: 0;
+  box-shadow: $boxshadow;
+  &.transparent {
+    background-color: transparent;
+    box-shadow: none;
+  }
+  .header-inner {
+    display: grid;
+    grid-template-columns: 140px 1fr auto;
+    align-items: center;
+  }
+  .nav-logo {
+    a {
+      position: relative;
+      display: block;
+      width: 100px;
+      img {
+        width: 100%;
+      }
+    }
+  }
+  .nav-menus {
+    margin-right: 20px;
+    margin-right: auto;
+    padding-left: 40px;
+    .menu-list {
+      display: flex;
+      align-items: center;
+      .link {
+        margin-left: 20px;
+        position: relative;
+        > a {
+          font-size: 15px;
+          font-weight: 500;
+          padding: 20px 0;
+          color: $textDark;
+          display: block;
+          text-transform: capitalize;
+        }
+        &:hover {
+          > a {
+            color: $primary;
+          }
+          &.have-child {
+            &::before {
+              color: $primary;
+            }
+          }
+        }
+        &.have-child {
+          padding-left: 35px;
+          margin-left: 5px;
+          &::before {
+            content: "\f25d";
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-family: $iconFontRegular;
+            font-size: 13px;
+            color: $textSilver;
+          }
+          &:hover {
+            > ul {
+              display: block;
+              animation: swipeupsmall 0.3s ease-in-out;
+            }
+          }
+        }
+        ul {
+          display: none;
+          position: absolute;
+          top: 100%;
+          right: 0;
+          background-color: white;
+          box-shadow: $boxshadow;
+          border-radius: 0;
+          width: 220px;
+          padding: 10px 0;
+        }
+        li {
+          position: relative;
+          a {
+            font-size: 15px;
+            font-weight: 500;
+            color: $textGrey;
+            display: block;
+            padding: 10px;
+            &:hover {
+              background-color: rgba($color: $primary, $alpha: 0.1);
+              color: $primary;
+            }
+          }
+          &.have-child {
+            &::before {
+              content: "\f25e";
+              position: absolute;
+              left: 10px;
+              top: 8px;
+              font-family: $iconFontRegular;
+              font-size: 18px;
+              color: $textGrey;
+            }
+            &:hover > a {
+              background-color: $borderColor;
+              color: $primary;
+              ~ ul {
+                display: block;
+              }
+            }
+          }
+          > ul {
+            display: none;
+            position: absolute;
+            right: 100%;
+            top: 0;
+            background-color: white;
+            width: 200px;
+            border-radius: 5px;
+            box-shadow: $boxshadow;
+          }
+        }
+      }
+    }
+  }
+  .nav-action {
+    @include displayFlex(flex, center, flex-end);
+  }
+  .mobile-links {
+    display: none;
+    .btn-mobile-menu {
+      background-color: transparent;
+      color: $textDark;
+      border: none;
+      width: 40px;
+      height: 40px;
+      padding: 0;
+      .fi {
+        font-size: 28px;
+        position: relative;
+        top: 5px;
+      }
+    }
+  }
+  .nav-login {
+    position: relative;
+    &:hover {
+      .user-menu {
+        display: block;
+      }
+    }
+    .btn {
+      max-width: 180px;
+      @include textTruncate(1);
+      font-size: 14px;
+    }
+    .user-menu {
+      position: absolute;
+      left: 0;
+      top: 100%;
+      background-color: white;
+      padding: 8px;
+      width: 180px;
+      box-shadow: $boxshadow;
+      display: none;
+      animation: swipeupsmall 0.2s ease-in-out;
+      ul {
+        li {
+          a {
+            @include displayFlex(flex, center, flex-start);
+            padding: 6px;
+            font-size: 14px;
+            font-weight: 400;
+            color: $textDark;
+            .fi {
+              margin-left: 10px;
+              font-size: 20px;
+              color: $textSilver;
+            }
+            &:hover {
+              background-color: rgba($color: $primary, $alpha: 0.1);
+              color: $primary;
+              .fi {
+                color: $primary;
+              }
+            }
+          }
+        }
+        hr {
+          margin: 5px 0;
+        }
+      }
+    }
+  }
+  .btn-nav-search {
+    width: 48px;
+    height: 48px;
+    @include displayFlex(flex, center, center);
+    padding: 2px;
+    font-size: 20px;
+    color: $textDark;
+    border: none;
+    margin-left: 10px;
+    background-color: $background;
+  }
+}
+
+#desktop-search-content {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1090;
+  background-color: rgba($color: black, $alpha: 0.9);
+  display: none;
+  .search-inner {
+    padding: 3rem 15px 15px 15px;
+    height: 100%;
+    @include displayFlex(flex, center, center);
+    flex-direction: column;
+    form {
+      display: grid;
+      grid-template-columns: auto 40px;
+      align-items: center;
+      position: relative;
+    }
+    .search-input {
+      align-items: center;
+      position: relative;
+      width: 650px;
+      margin: 0 auto;
+      input {
+        width: 100%;
+        height: 50px;
+        border: none;
+        border-radius: 0px;
+        background-color: white;
+        font-size: 14px;
+        font-weight: 400;
+        color: $textDark;
+        padding: 5px 15px 5px 150px;
+      }
+      .btn-clear {
+        border: none;
+        position: absolute;
+        background-color: transparent;
+        top: 5px;
+        left: 90px;
+        width: 40px;
+        height: 40px;
+        color: $textGrey;
+        display: none;
+        .fi {
+          font-size: 20px;
+          position: relative;
+          top: 3px;
+        }
+        &.active {
+          display: block;
+        }
+      }
+      .btn-search-result {
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 40px;
+        height: 100%;
+        padding: 3px 20px;
+        background: $primary;
+        color: white;
+        border: 3px solid white;
+      }
+    }
+    .list-result {
+      width: 650px;
+      margin: 1.5rem auto 0 auto;
+      overflow-y: auto;
+      @include customScrollbar(
+        rgba(255, 255, 255, 0.5),
+        rgba(255, 255, 255, 0.2)
+      );
+      .tags {
+        @include displayFlex(flex, flex-start, flex-start);
+        flex-wrap: wrap;
+        padding-bottom: 1rem;
+        li {
+          a {
+            display: block;
+            padding: 5px 10px;
+            margin: 0 0 15px 10px;
+            box-shadow: 0 5px 10px rgba($color: #000000, $alpha: 0.07);
+            white-space: nowrap;
+            font-size: 13px;
+            font-weight: 400;
+            color: white;
+            border-radius: 50px;
+            background-color: rgba($color: white, $alpha: 0.2);
+            &:hover {
+              background-color: $secondary;
+            }
+          }
+        }
+      }
+    }
+  }
+  .btn-arrow-back {
+    position: absolute;
+    left: 30px;
+    top: 30px;
+    border: none;
+    width: 48px;
+    height: 48px;
+    @include displayFlex(flex, center, center);
+    border-radius: 50%;
+    background-color: rgba($color: white, $alpha: 0.2);
+    color: rgba($color: white, $alpha: 0.7);
+    transition: all 0.2s ease-in-out;
+    .fi {
+      font-size: 20px;
+      position: relative;
+      top: 1px;
+      left: 3px;
+      margin-right: 5px;
+    }
+    &:hover {
+      background-color: rgba($color: white, $alpha: 0.4);
+      color: white;
+    }
+  }
+  &.active {
+    display: block;
+    animation: scaleIn 0.3s ease-in-out;
+  }
+}
+
+@media (max-width: 992px) {
+  .myNavbar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    &.transparent {
+      background-color: white;
+      box-shadow: $boxshadow;
+    }
+    .header-inner {
+      grid-template-columns: 1fr 120px 1fr;
+    }
+    .nav-menus {
+      display: none;
+    }
+    .mobile-links {
+      display: block;
+      z-index: 20;
+    }
+    .nav-logo {
+      position: relative;
+      z-index: 10;
+      a {
+        width: 80px;
+        margin: 0 auto;
+        &::before {
+          border: none;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 768px) {
+  .myNavbar {
+    .nav-action {
+      .btn {
+        width: 45px;
+        height: 45px;
+        padding: 5px;
+        min-width: unset;
+        .fi {
+          position: unset;
+        }
+        .text {
+          display: none;
+        }
+        .icon {
+          width: 100%;
+          height: 100%;
+          @include displayFlex(flex, center, center);
+        }
+      }
+    }
+  }
+  #desktop-search-content {
+    .search-inner {
+      .search-input,
+      .list-result {
+        width: 100%;
+      }
+    }
+  }
+}
+@media (max-width: 575px) {
+  .myNavbar {
+    .header-inner {
+      position: relative;
+    }
+  }
+}
+/*#endregion -------------- Navbar */

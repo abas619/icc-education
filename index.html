@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="fa" class="no-js" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#007ddf" />
+    <meta name="msapplication-navbutton-color" content="#007ddf">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#007ddf">
+    <title>اتاق بازرگانی ICC | صفحه نخست</title>
+    <link href="css/bootstrap.rtl.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="scss/main.css">
+
+    <!-- Font Icons -->
+    <link href="css/all.rounded.css" rel="stylesheet" type="text/css" />
+    <link href="plugins/aos/aos.css" rel="stylesheet" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="images/small-icon.png" />
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="images/logo-72x72.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="images/logo-114x114.png" />
+
+</head>
+
+<body>
+    <!-- Loading Wrapper -->
+    <div class="loading-wrapper d-none">
+        <div class="load-inner">
+            <div class="load-shapes"></div>
+            <h6 class="load-title">لطفا صبر کنید</h6>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="myNavbar">
+        <div class="container-lg">
+            <div class="header-inner">
+                <div class="mobile-links">
+                    <button type="button" class="btn-mobile-menu"><i class="fi fi-rr-menu-burger"></i></button>
+                    <!-- Sidebar Menu -->
+                    <div id="sidebar-menu">
+                        <div class="sidebar-header">
+                            <div class="sidebar-logo">
+                                <a href="index.html">
+                                    <img src="images/logo.svg" class="sidebarlogo" alt="logo">
+                                </a>
+                            </div>
+                            <div class="sidebar-close">
+                                <button class="btn-close-menu"><i class="fi fi-rr-cross"></i></button>
+                            </div>
+                        </div>
+                        <ul class="category-list">
+                            <li class="item"><a href="#">کمیسیون‌ها</a></li>
+                            <li class="item"><a href="#">آموزش</a></li>
+                            <li class="item"><a href="#">انتشارات</a></li>
+                            <li class="item"><a href="#">درباره ما</a></li>
+                            <li class="item"><a href="#">تماس با ما</a></li>
+                        </ul>
+                        <div class="socials-icon">
+                            <ul>
+                                <li><a href="#"><i class="fi fi-brands-telegram"></i></a></li>
+                                <li><a href="#"><i class="fi fi-brands-instagram"></i></a></li>
+                                <li><a href="#"><i class="fi fi-brands-linkedin"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="overlay-back"></div>
+                </div>
+                <div class="nav-logo">
+                    <a href="index.html">
+                        <img src="images/logo.svg" alt="logo">
+                    </a>
+                </div>
+                <div class="nav-menus">
+                    <ul class="menu-list">
+                        <li class="link"><a href="#">کمیسیون‌ها</a></li>
+                        <li class="link"><a href="#">آموزش</a></li>
+                        <li class="link have-child">
+                            <a href="#">انتشارات</a>
+                            <ul>
+                                <li><a href="#">مقالات</a></li>
+                                <li><a href="#">بولتن خبری</a></li>
+                                <li><a href="#">مقالات و دستورالعمل های ICC</a></li>
+                            </ul>
+                        </li>
+                        <li class="link"><a href="#">درباره ما</a></li>
+                        <li class="link"><a href="#">تماس با ما</a></li>
+                    </ul>
+                </div>
+                <div class="nav-action">
+                    <!-- Search -->
+                    <div class="nav-search">
+                        <button class="btn-nav-search" onclick="showDesktopSearch()"><i
+                                class="fi fi-rr-search"></i></button>
+                    </div>
+                    <!-- قبل لاگین -->
+                    <button class="btn btn-primary icon-right">
+                        <span class="icon"><i class="fi fi-rr-user-add"></i></span>
+                        <span class="text">ورود/ثبت‌ نام</span>
+                    </button>
+
+                    <!-- وقتی لاگین کرد -->
+                    <!-- <div class="nav-login">
+                        <button class="btn btn-primary-outline icon-right text-truncate">
+                            <span class="icon"><i class="fi fi-rr-user"></i></span>
+                            <span class="text">وحید حسینی</span>
+                        </button>
+                        <div class="user-menu">
+                            <ul>
+                                <li><a href="#"><i class="fi fi-rr-user"></i>پروفایل من</a></li>
+                                <li><a href="#"><i class="fi fi-rr-bookmark"></i>لیست‌ها</a></li>
+                                <li><a href="#"><i class="fi fi-rr-play-alt"></i>دوره‌ها</a></li>
+                                <hr>
+                                <li><a href="#"><i class="fi fi-rr-sign-out-alt"></i>خروج از حساب</a></li>
+                            </ul>
+                        </div>
+                    </div> -->
+
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Desktop Search -->
+    <div id="desktop-search-content" class="">
+        <button type="button" class="btn-arrow-back" onclick="hideDesktopSearch()">
+            <i class="fi fi-rr-cross"></i>
+        </button>
+        <div class="search-inner">
+            <div class="search-input">
+                <input type="text" class="desktop-search-input" placeholder="جستجو..." onkeyup="changeValue(this)">
+                <button type="button" class="btn-clear" onclick="clearInputValue(this)"><i
+                        class="fi fi-rr-trash"></i></button>
+                <button type="button" class="btn-search-result">جستجو</button>
+            </div>
+            <div class="list-result">
+                <ul class="tags">
+                    <li><a href="#">کسب‌و کار آنلاین</a></li>
+                    <li><a href="#">مدیریت زمان</a></li>
+                    <li><a href="#">کوچینگ</a></li>
+                    <li><a href="#">ثروتمند شوید</a></li>
+                    <li><a href="#">نجات از رکود</a></li>
+                    <li><a href="#">مدیریت</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Swiper -->
+    <div class="home-slider-section">
+        <div class="container-lg">
+            <div class="section-inner">
+                <div class="big-slider">
+                    <div class="swiper swiper-home">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <a href="#">
+                                    <picture>
+                                        <source media="(max-width: 768px)"
+                                            srcset="https://via.placeholder.com/700x350/aaa.png">
+                                        <source media="(min-width: 769px)"
+                                            srcset="https://via.placeholder.com/1800x788/aaa.png">
+                                        <img src="https://via.placeholder.com/1800x788/aaa.png" alt="img-name">
+                                    </picture>
+                                </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="#">
+                                    <picture>
+                                        <source media="(max-width: 768px)"
+                                            srcset="https://via.placeholder.com/700x350/aaa.png">
+                                        <source media="(min-width: 769px)"
+                                            srcset="https://via.placeholder.com/1800x788/aaa.png">
+                                        <img src="https://via.placeholder.com/1800x788/aaa.png" alt="img-name">
+                                    </picture>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+                <div class="small-slider">
+                    <a href="#" class="img-content">
+                        <div class="img-inner">
+                            <img src="https://via.placeholder.com/596x700/ccc.png" alt="">
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Category -->
+    <div class="category-section">
+        <div class="container">
+            <div class="grid-layout">
+                <div class="card-category">
+                    <a href="#" class="card-inner">
+                        <div class="thumb">
+                            <img src="https://via.placeholder.com/200x200/ccc.png" alt="cat-thumb">
+                        </div>
+                        <div class="info">
+                            <h3>نام دسته بندی</h3>
+                            <h6>6 دوره</h6>
+                        </div>
+                    </a>
+                </div>
+                <div class="card-category">
+                    <a href="#" class="card-inner">
+                        <div class="thumb">
+                            <img src="https://via.placeholder.com/200x200/ccc.png" alt="cat-thumb">
+                        </div>
+                        <div class="info">
+                            <h3>نام دسته بندی</h3>
+                            <h6>21 دوره</h6>
+                        </div>
+                    </a>
+                </div>
+                <div class="card-category">
+                    <a href="#" class="card-inner">
+                        <div class="thumb">
+                            <img src="https://via.placeholder.com/200x200/ccc.png" alt="cat-thumb">
+                        </div>
+                        <div class="info">
+                            <h3>نام دسته بندی</h3>
+                            <h6>9 دوره</h6>
+                        </div>
+                    </a>
+                </div>
+                <div class="card-category">
+                    <a href="#" class="card-inner">
+                        <div class="thumb">
+                            <img src="https://via.placeholder.com/200x200/ccc.png" alt="cat-thumb">
+                        </div>
+                        <div class="info">
+                            <h3>نام دسته بندی</h3>
+                            <h6>17 دوره</h6>
+                        </div>
+                    </a>
+                </div>
+                <div class="card-category">
+                    <a href="#" class="card-inner">
+                        <div class="thumb">
+                            <img src="https://via.placeholder.com/200x200/ccc.png" alt="cat-thumb">
+                        </div>
+                        <div class="info">
+                            <h3>نام دسته بندی</h3>
+                            <h6>15 دوره</h6>
+                        </div>
+                    </a>
+                </div>
+                <div class="card-category">
+                    <a href="#" class="card-inner">
+                        <div class="thumb">
+                            <img src="https://via.placeholder.com/200x200/ccc.png" alt="cat-thumb">
+                        </div>
+                        <div class="info">
+                            <h3>نام دسته بندی</h3>
+                            <h6>3 دوره</h6>
+                        </div>
+                    </a>
+                </div>
+                <div class="card-category">
+                    <a href="#" class="card-inner">
+                        <div class="thumb">
+                            <img src="https://via.placeholder.com/200x200/ccc.png" alt="cat-thumb">
+                        </div>
+                        <div class="info">
+                            <h3>نام دسته بندی</h3>
+                            <h6>8 دوره</h6>
+                        </div>
+                    </a>
+                </div>
+                <div class="card-category">
+                    <a href="#" class="card-inner">
+                        <div class="thumb">
+                            <img src="https://via.placeholder.com/200x200/ccc.png" alt="cat-thumb">
+                        </div>
+                        <div class="info">
+                            <h3>نام دسته بندی</h3>
+                            <h6>16 دوره</h6>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Property -->
+    <div class="property-section">
+        <div class="container">
+            <div class="section-inner">
+                <div class="row justify-content-center">
+                    <div class="col-lg-4">
+                        <div class="card-property">
+                            <div class="card-inner">
+                                <div class="thumb">
+                                    <img src="images/icons/property-learn.svg" alt="img-certificate">
+                                </div>
+                                <div class="info">
+                                    <h6>آموزش آنلاین</h6>
+                                    <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان
+                                        گرافیک است، </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="card-property">
+                            <div class="card-inner">
+                                <div class="thumb">
+                                    <img src="images/icons/property-certificate.svg" alt="img-certificate">
+                                </div>
+                                <div class="info">
+                                    <h6>دریافت گواهینامه</h6>
+                                    <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان
+                                        گرافیک است، </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="card-property">
+                            <div class="card-inner">
+                                <div class="thumb">
+                                    <img src="images/icons/property-gears.svg" alt="img-certificate">
+                                </div>
+                                <div class="info">
+                                    <h6>بازار کار</h6>
+                                    <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان
+                                        گرافیک است، </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Courses Slider -->
+    <div class="courses-slider">
+        <div class="container">
+            <div class="page-title">
+                <div class="title-inner">
+                    <h1>جدیدترین دوره‌ها</h1>
+                    <a href="#" class="btn-group-link">
+                        <span class="text">مشاهده همه</span>
+                        <span class="icon"><i class="fi fi-rr-arrow-left"></i></span>
+                    </a>
+                </div>
+            </div>
+            <div class="section-inner">
+                <div class="swiper swiper-courses">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="card-course">
+                                <a href="#" class="card-inner">
+                                    <div class="img-container">
+                                        <div class="img-inner">
+                                            <img src="https://via.placeholder.com/520x465/ccc.png" alt="image-name">
+                                        </div>
+                                    </div>
+                                    <div class="info">
+                                        <h3 class="name">کتاب صوتی | کواکتیوکوچینگ</h3>
+                                        <h4 class="author">هنری کیمسی</h4>
+                                        <div class="price">
+                                            <div class="real">
+                                                <div class="discount">180,000</div>
+                                                <h6>150,000</h6>
+                                            </div>
+                                            <span class="toman">تومان</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="card-course">
+                                <a href="#" class="card-inner">
+                                    <div class="img-container">
+                                        <div class="img-inner">
+                                            <img src="https://via.placeholder.com/520x465/ccc.png" alt="image-name">
+                                        </div>
+                                    </div>
+                                    <div class="info">
+                                        <h3 class="name">کتاب صوتی | کواکتیوکوچینگ</h3>
+                                        <h4 class="author">هنری کیمسی</h4>
+                                        <div class="price">
+                                            <div class="real">
+                                                <div class="discount">180,000</div>
+                                                <h6>150,000</h6>
+                                            </div>
+                                            <span class="toman">تومان</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="card-course">
+                                <a href="#" class="card-inner">
+                                    <div class="img-container">
+                                        <div class="img-inner">
+                                            <img src="https://via.placeholder.com/520x465/ccc.png" alt="image-name">
+                                        </div>
+                                    </div>
+                                    <div class="info">
+                                        <h3 class="name">کتاب صوتی | کواکتیوکوچینگ</h3>
+                                        <h4 class="author">هنری کیمسی</h4>
+                                        <div class="price">
+                                            <div class="real">
+                                                <div class="discount">180,000</div>
+                                                <h6>150,000</h6>
+                                            </div>
+                                            <span class="toman">تومان</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="card-course">
+                                <a href="#" class="card-inner">
+                                    <div class="img-container">
+                                        <div class="img-inner">
+                                            <img src="https://via.placeholder.com/520x465/ccc.png" alt="image-name">
+                                        </div>
+                                    </div>
+                                    <div class="info">
+                                        <h3 class="name">کتاب صوتی | کواکتیوکوچینگ</h3>
+                                        <h4 class="author">هنری کیمسی</h4>
+                                        <div class="price">
+                                            <div class="real">
+                                                <div class="discount">180,000</div>
+                                                <h6>150,000</h6>
+                                            </div>
+                                            <span class="toman">تومان</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Teachers List -->
+    <div class="teacher-section">
+        <div class="container">
+            <div class="section-inner">
+                <div class="page-title">
+                    <div class="title-inner">
+                        <h1>برخی از اساتید ما</h1>
+                    </div>
+                </div>
+                <div class="teachers-list">
+                    <div class="card-teacher">
+                        <a href="#" class="card-inner">
+                            <div class="user-image">
+                                <img src="https://via.placeholder.com/150x150/ccc.png" alt="user-name">
+                            </div>
+                            <div class="info">
+                                <h2 class="name">نام مدرس</h2>
+                                <h3 class="job">حوزه فعالیت</h3>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="card-teacher">
+                        <a href="#" class="card-inner">
+                            <div class="user-image">
+                                <img src="https://via.placeholder.com/150x150/ccc.png" alt="user-name">
+                            </div>
+                            <div class="info">
+                                <h2 class="name">نام مدرس</h2>
+                                <h3 class="job">حوزه فعالیت</h3>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="card-teacher">
+                        <a href="#" class="card-inner">
+                            <div class="user-image">
+                                <img src="https://via.placeholder.com/150x150/ccc.png" alt="user-name">
+                            </div>
+                            <div class="info">
+                                <h2 class="name">نام مدرس</h2>
+                                <h3 class="job">حوزه فعالیت</h3>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="card-teacher">
+                        <a href="#" class="card-inner">
+                            <div class="user-image">
+                                <img src="https://via.placeholder.com/150x150/ccc.png" alt="user-name">
+                            </div>
+                            <div class="info">
+                                <h2 class="name">نام مدرس</h2>
+                                <h3 class="job">حوزه فعالیت</h3>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="card-teacher">
+                        <a href="#" class="card-inner">
+                            <div class="user-image">
+                                <img src="https://via.placeholder.com/150x150/ccc.png" alt="user-name">
+                            </div>
+                            <div class="info">
+                                <h2 class="name">نام مدرس</h2>
+                                <h3 class="job">حوزه فعالیت</h3>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="card-teacher">
+                        <a href="#" class="card-inner">
+                            <div class="user-image">
+                                <img src="https://via.placeholder.com/150x150/ccc.png" alt="user-name">
+                            </div>
+                            <div class="info">
+                                <h2 class="name">نام مدرس</h2>
+                                <h3 class="job">حوزه فعالیت</h3>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="button-group">
+                    <a href="#" class="btn btn-primary icon-left">همه اساتید<i
+                            class="fi fi-rr-arrow-small-left"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="description-section">
+        <div class="container">
+            <div class="section-inner">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 order-lg-1 order-md-2 order-sm-2 order-2">
+                        <div class="image-content">
+                            <div class="img-inner">
+                                <img src="https://via.placeholder.com/800x450/ccc.png" alt="img-thumb">
+                            </div>
+                            <button class="btn-play"><i class="fi fi-sr-play"></i></button>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 order-lg-2 order-md-1 order-sm-1 order-1">
+                        <div class="text-content">
+                            <div class="page-title">
+                                <div class="title-inner">
+                                    <h1>درباره ICC</h1>
+                                </div>
+                            </div>
+                            <div class="desc">
+                                <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان
+                                    گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و
+                                    برای شرایط محیا باشد</p>
+                                <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان
+                                    گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و
+                                    برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود است.</p>
+                            </div>
+                            <div class="btns-action">
+                                <a href="#" class="btn btn-primary icon-right"><i class="fi fi-rr-arrow-left"></i>بیشتر
+                                    بدانید</a>
+                                <a href="#" class="btn btn-secondary icon-right"><i class="fi fi-rr-eye"></i>مشاهده همه
+                                    دوره‌ها</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Courses List -->
+    <div class="courses-slider">
+        <div class="container">
+            <div class="page-title">
+                <div class="title-inner">
+                    <h1>پرطرفدارترین دوره‌ها</h1>
+                    <a href="#" class="btn-group-link">
+                        <span class="text">مشاهده همه</span>
+                        <span class="icon"><i class="fi fi-rr-arrow-left"></i></span>
+                    </a>
+                </div>
+            </div>
+            <div class="section-inner">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 col-sm-6">
+                        <div class="card-course">
+                            <a href="#" class="card-inner">
+                                <div class="img-container">
+                                    <div class="img-inner">
+                                        <img src="https://via.placeholder.com/520x465/ccc.png" alt="image-name">
+                                    </div>
+                                </div>
+                                <div class="info">
+                                    <h3 class="name">کتاب صوتی | کواکتیوکوچینگ</h3>
+                                    <h4 class="author">هنری کیمسی</h4>
+                                    <div class="price">
+                                        <div class="real">
+                                            <div class="discount">180,000</div>
+                                            <h6>150,000</h6>
+                                        </div>
+                                        <span class="toman">تومان</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-6">
+                        <div class="card-course">
+                            <a href="#" class="card-inner">
+                                <div class="img-container">
+                                    <div class="img-inner">
+                                        <img src="https://via.placeholder.com/520x465/ccc.png" alt="image-name">
+                                    </div>
+                                </div>
+                                <div class="info">
+                                    <h3 class="name">کتاب صوتی | کواکتیوکوچینگ</h3>
+                                    <h4 class="author">هنری کیمسی</h4>
+                                    <div class="price">
+                                        <div class="real">
+                                            <div class="discount">180,000</div>
+                                            <h6>150,000</h6>
+                                        </div>
+                                        <span class="toman">تومان</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-6">
+                        <div class="card-course">
+                            <a href="#" class="card-inner">
+                                <div class="img-container">
+                                    <div class="img-inner">
+                                        <img src="https://via.placeholder.com/520x465/ccc.png" alt="image-name">
+                                    </div>
+                                </div>
+                                <div class="info">
+                                    <h3 class="name">کتاب صوتی | کواکتیوکوچینگ</h3>
+                                    <h4 class="author">هنری کیمسی</h4>
+                                    <div class="price">
+                                        <div class="real">
+                                            <div class="discount">180,000</div>
+                                            <h6>150,000</h6>
+                                        </div>
+                                        <span class="toman">تومان</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-6">
+                        <div class="card-course">
+                            <a href="#" class="card-inner">
+                                <div class="img-container">
+                                    <div class="img-inner">
+                                        <img src="https://via.placeholder.com/520x465/ccc.png" alt="image-name">
+                                    </div>
+                                </div>
+                                <div class="info">
+                                    <h3 class="name">کتاب صوتی | کواکتیوکوچینگ</h3>
+                                    <h4 class="author">هنری کیمسی</h4>
+                                    <div class="price">
+                                        <div class="real">
+                                            <div class="discount">180,000</div>
+                                            <h6>150,000</h6>
+                                        </div>
+                                        <span class="toman">تومان</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-6">
+                        <div class="card-course">
+                            <a href="#" class="card-inner">
+                                <div class="img-container">
+                                    <div class="img-inner">
+                                        <img src="https://via.placeholder.com/520x465/ccc.png" alt="image-name">
+                                    </div>
+                                </div>
+                                <div class="info">
+                                    <h3 class="name">کتاب صوتی | کواکتیوکوچینگ</h3>
+                                    <h4 class="author">هنری کیمسی</h4>
+                                    <div class="price">
+                                        <div class="real">
+                                            <div class="discount">180,000</div>
+                                            <h6>150,000</h6>
+                                        </div>
+                                        <span class="toman">تومان</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-6">
+                        <div class="card-course">
+                            <a href="#" class="card-inner">
+                                <div class="img-container">
+                                    <div class="img-inner">
+                                        <img src="https://via.placeholder.com/520x465/ccc.png" alt="image-name">
+                                    </div>
+                                </div>
+                                <div class="info">
+                                    <h3 class="name">کتاب صوتی | کواکتیوکوچینگ</h3>
+                                    <h4 class="author">هنری کیمسی</h4>
+                                    <div class="price">
+                                        <div class="real">
+                                            <div class="discount">180,000</div>
+                                            <h6>150,000</h6>
+                                        </div>
+                                        <span class="toman">تومان</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Banner -->
+    <div class="banner-section">
+        <div class="container">
+            <div class="section-inner">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6">
+                        <div class="img-container">
+                            <a href="#">
+                                <img src="https://via.placeholder.com/800x300/ccc.png" alt="image-name">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <div class="img-container">
+                            <a href="#">
+                                <img src="https://via.placeholder.com/800x300/ccc.png" alt="image-name">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="partners-section">
+        <div class="container">
+            <div class="page-title">
+                <div class="title-inner">
+                    <h1>شرکت و موسسه هایی که افتخار همکاری با آنان را داشته ایم</h1>
+                </div>
+            </div>
+            <div class="section-inner">
+                <div class="swiper swiper-partners">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="item">
+                                <img src="images/company-logo/1.jpg" alt="company-name">
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="item">
+                                <img src="images/company-logo/2.jpg" alt="company-name">
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="item">
+                                <img src="images/company-logo/3.jpg" alt="company-name">
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="item">
+                                <img src="images/company-logo/4.jpg" alt="company-name">
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="item">
+                                <img src="images/company-logo/5.jpg" alt="company-name">
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="item">
+                                <img src="images/company-logo/6.jpg" alt="company-name">
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="item">
+                                <img src="images/company-logo/7.jpg" alt="company-name">
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="item">
+                                <img src="images/company-logo/4.jpg" alt="company-name">
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="item">
+                                <img src="images/company-logo/5.jpg" alt="company-name">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-inner">
+                <div class="row">
+                    <div class="col-lg-4 col-md-12">
+                        <div class="information">
+                            <div class="logo">
+                                <a href="index.html">
+                                    <img src="images/logo-white.svg" alt="logo">
+                                </a>
+                            </div>
+                            <div class="description">
+                                <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان
+                                    گرافیک است چاپگرها و متون بلکه روزنامه
+                                    و مجله در ستون و سطرآنچنان که لازم است</p>
+                            </div>
+                            <div class="e-sign">
+                                <ul>
+                                    <li>
+                                        <a href="#"><img src="https://via.placeholder.com/300x300/ccc.png" alt=""></a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><img src="https://via.placeholder.com/300x300/ccc.png" alt=""></a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><img src="https://via.placeholder.com/300x300/ccc.png" alt=""></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-5 col-md-6">
+                        <div class="links">
+                            <h5 class="footer-title">دسترسی سریع</h5>
+                            <ul>
+                                <li><a href="#">صفحه‌ اصلی</a></li>
+                                <li><a href="#">خدمات مشورتی</a></li>
+                                <li><a href="#">مقالات و دستورالعمل‌ها</a></li>
+                                <li><a href="#">انتشارات</a></li>
+                                <li><a href="#">اخبار</a></li>
+                                <li><a href="#">درباره ما</a></li>
+                                <li><a href="#">آموزش</a></li>
+                                <li><a href="#">شرایط عضویت</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="socials-information">
+                            <h5 class="footer-title">ارتباط با ما</h5>
+                            <ul class="icons-list">
+                                <li><a href="#"><i class="fi fi-brands-linkedin"></i></a></li>
+                                <li><a href="#"><i class="fi fi-brands-telegram"></i></a></li>
+                                <li><a href="#"><i class="fi fi-brands-instagram"></i></a></li>
+                            </ul>
+                            <div class="call-content">
+                                <ul>
+                                    <li>
+                                        شماره تماس :
+                                        <div class="desc">
+                                            <a href="tel:0215648893">021-5648893</a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        آدرس :
+                                        <div class="desc">تهران ملاصدرا، نبش کوچه</div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <span>تمامی حقوق متعلق به کمیته ایرانی اتاق بازرگانی بین المللی است. طراحی و اجرا توسط <a
+                        href="#">آی‌تی‌سان</a></span>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Scripts -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="plugins/swiperjs/swiper-initial.js"></script>
+    <script src="plugins/aos/aos.js"></script>
+    <script src="js/scripts.js"></script>
+</body>
+
+</html>

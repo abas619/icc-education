@@ -1,0 +1,881 @@
+/*#region ----------------- Courses List */
+.courses-slider {
+  margin: 70px 0;
+  .section-inner {
+    margin-top: 1rem;
+    position: relative;
+  }
+}
+
+.card-course {
+  margin-bottom: 25px;
+  .card-inner {
+    background-color: white;
+    box-shadow: $boxshadow;
+    border-radius: 0;
+    padding: 10px;
+    display: block;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+  }
+  .img-container {
+    @include imgContainer(250px, 0);
+  }
+  .info {
+    padding: 15px 5px 10px 5px;
+    .name {
+      font-size: 15px;
+      font-weight: 600;
+      color: $textDark;
+      margin-bottom: 10px;
+      @include textTruncate(2);
+      a {
+        color: $textDark;
+      }
+    }
+    .author {
+      font-size: 13px;
+      font-weight: 400;
+      color: $textGrey;
+      @include textTruncate(1);
+    }
+    .price {
+      @include displayFlex(flex, flex-end, flex-end);
+      .real {
+        @include displayFlex(flex, flex-start, flex-start);
+        flex-direction: column;
+        color: $textDark;
+      }
+      .discount {
+        font-size: 16px;
+        font-weight: 500;
+        color: $textSilver;
+        text-decoration: line-through;
+      }
+      h6 {
+        font-size: 20px;
+        font-weight: 800;
+        margin-bottom: 0;
+        color: $textDark;
+      }
+      .toman {
+        font-size: 15px;
+        font-weight: 400;
+        margin-right: 5px;
+        color: $textGrey;
+      }
+    }
+  }
+  .delete {
+    text-align: left;
+    width: 100%;
+    .btn-delete {
+      width: 38px;
+      height: 38px;
+      padding: 0;
+      border-radius: 8px;
+      border: none;
+      background-color: rgba($color: #e62400, $alpha: 0.1);
+      color: $error;
+      .fi {
+        font-size: 20px;
+        position: relative;
+        top: 4px;
+      }
+      &:hover {
+        background-color: $error;
+        color: white;
+      }
+    }
+  }
+  &:hover {
+    .info {
+      .name {
+        color: $primary;
+      }
+    }
+  }
+}
+
+.swiper-courses {
+  position: unset !important;
+  .swiper-wrapper {
+    padding: 20px 0;
+  }
+  .swiper-button-next,
+  .swiper-button-prev {
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    border-radius: 50%;
+    box-shadow: $boxshadow;
+    &::after {
+      font-family: $iconFontRegular;
+      font-size: 28px;
+      color: $textDark;
+    }
+  }
+  .swiper-button-prev {
+    right: -15px;
+    &::after {
+      content: "\f12e";
+    }
+  }
+  .swiper-button-next {
+    left: -15px;
+    &::after {
+      content: "\f12d";
+    }
+  }
+  .card-course {
+    padding: 10px;
+    margin-bottom: 0 !important;
+  }
+}
+
+#products-section {
+  margin-top: 140px;
+  .list-container {
+    margin-bottom: 4rem;
+    .myrow {
+      display: grid;
+      grid-template-columns: 300px auto;
+      .products-main {
+        padding-right: 25px;
+        .main-inner {
+          margin-top: 1rem;
+        }
+      }
+    }
+  }
+  .sort-content {
+    @include displayFlex(flex, center, flex-start);
+    .sort-title {
+      font-size: 13px;
+      font-weight: 400;
+      color: $textGrey;
+      margin-bottom: 0;
+      .fi {
+        font-size: 22px;
+        position: relative;
+        top: 5px;
+        margin-left: 5px;
+        line-height: 0;
+      }
+    }
+    ul {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      margin-right: 20px;
+      li {
+        margin-left: 10px;
+        a {
+          border-radius: 5px;
+          display: block;
+          font-size: 13px;
+          font-weight: 400;
+          color: $textGrey;
+          padding: 3px 5px;
+        }
+        &.active a {
+          background-color: $primary;
+          color: white;
+        }
+      }
+    }
+    .btn-sort,
+    .btn-advanced-search {
+      @include displayFlex(none, center, center);
+      margin-left: 15px;
+      background-color: white;
+      border: 1px solid $borderColor;
+      border-radius: 5px;
+      padding: 8px;
+      font-size: 12px;
+      font-weight: 400;
+      color: $textGrey;
+      cursor: pointer;
+      .fi {
+        margin-left: 5px;
+        font-size: 18px;
+        line-height: 0;
+        position: relative;
+        top: 2px;
+      }
+    }
+  }
+
+  .products-list {
+    @include displayFlex(flex, flex-start, flex-start);
+    flex-wrap: wrap;
+    margin-top: 2rem;
+    .card-course {
+      flex: 0 0 33.33%;
+      width: 33.33%;
+      padding-left: 15px;
+      margin-bottom: 1.5rem;
+      .img-container {
+        height: 210px;
+      }
+      &:hover {
+        .card-inner {
+          box-shadow: $boxshadow;
+        }
+      }
+    }
+    .card-teacher {
+      flex: 0 0 33.33%;
+      width: 33.33%;
+      padding-left: 15px;
+      margin-bottom: 2rem;
+      .card-inner {
+        box-shadow: $boxshadow;
+      }
+    }
+  }
+}
+
+#mobile-title {
+  display: none;
+  margin-bottom: 20px;
+  h5 {
+    font-size: 18px;
+    font-weight: 800;
+  }
+}
+#desk-title {
+  display: block;
+  margin: 1.2rem 0 30px 0;
+  h5 {
+    font-size: 24px;
+    font-weight: 800;
+  }
+}
+
+.side-box {
+  background-color: $background;
+  padding: 20px 15px 10px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  .box-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    h2 {
+      font-size: 15px;
+      font-weight: 600;
+      color: $textDark;
+      margin-bottom: 0;
+    }
+    .btn-clean-filter {
+      background-color: transparent;
+      padding: 0;
+      margin: 0;
+      font-size: 12px;
+      font-weight: 400;
+      color: $primary;
+      border: none;
+    }
+  }
+  .box-body {
+    margin-top: 25px;
+    .title {
+      font-size: 13px;
+      font-weight: 500;
+      color: $textDark;
+      margin: 15px 0;
+    }
+    .filter-choosen {
+      @include displayFlex(flex, center, flex-start);
+      flex-wrap: wrap;
+      li {
+        font-size: 13px;
+        font-weight: 400;
+        color: $textGrey;
+        background-color: $secondary;
+        border-radius: 30px;
+        padding: 5px 12px 5px 6px;
+        margin: 0 0 8px 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        a {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 20px;
+          height: 20px;
+          background-color: $primary;
+          border-radius: 50%;
+          color: white;
+          margin-right: 10px;
+          .fi {
+            font-size: 8px;
+          }
+        }
+        .from,
+        .to {
+          font-size: 12px;
+          font-weight: 400;
+        }
+        .price {
+          font-size: 13px;
+          font-weight: 600;
+          margin: 0 5px;
+          color: $textDark;
+        }
+      }
+    }
+    .list-category {
+      a {
+        display: block;
+      }
+      li {
+        margin-bottom: 10px;
+      }
+      .category-title {
+        font-size: 13px;
+        font-weight: 400;
+        color: $textGrey;
+        position: relative;
+        padding-right: 20px;
+        margin-bottom: 10px;
+        transition: all 0.2s ease-in-out;
+        &::before {
+          content: "\f152";
+          font-family: $iconFontRegular;
+          position: absolute;
+          top: -2px;
+          right: 0;
+          font-size: 16px;
+        }
+        &:hover {
+          color: $primary;
+          padding-right: 25px;
+        }
+        &.active {
+          color: $primary;
+        }
+      }
+      .sub-list-category {
+        height: 200px;
+        overflow: hidden;
+        transition: all 0.2s ease-in-out;
+        .sub-item {
+          font-size: 13px;
+          font-weight: 400;
+          color: $textGrey;
+          position: relative;
+          padding-right: 30px;
+          transition: all 0.2s ease-in-out;
+          &.haveIcon {
+            &::before {
+              content: "\f152";
+              font-family: $iconFontRegular;
+              position: absolute;
+              top: -2px;
+              right: 12px;
+              font-size: 14px;
+            }
+          }
+          &.active {
+            color: $primary;
+            font-weight: 500;
+          }
+          &:hover {
+            color: $primary;
+            padding-right: 35px;
+          }
+        }
+      }
+    }
+    &.active {
+      .list-category {
+        .sub-list-category {
+          height: auto;
+          transition: all 0.8s ease-in-out;
+        }
+      }
+    }
+    .see-more {
+      background-color: $background;
+      border-radius: 8px;
+      text-align: center;
+      .btn-seeMore-list {
+        background-color: transparent;
+        border: none;
+        font-size: 13px;
+        padding: 5px;
+        color: $textSilver;
+        position: relative;
+        &::before {
+          content: "\f151";
+          font-family: $iconFontRegular;
+          position: absolute;
+          left: -10px;
+        }
+        &.active {
+          &::before {
+            content: "\f154";
+          }
+        }
+      }
+    }
+  }
+  &.side-collapse {
+    padding-top: 10px;
+    .btn-collapse {
+      padding: 0;
+      height: 30px;
+      background-color: $background;
+      .title {
+        font-size: 15px;
+        font-weight: 600;
+        color: $textDark;
+      }
+      .icon {
+        left: 0;
+        top: 0;
+      }
+    }
+  }
+  .range-price-filter {
+    padding: 0 15px 10px 30px;
+    margin-top: 2rem;
+  }
+  .range-value-inner {
+    margin-top: 25px;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    align-items: center;
+    .min-range,
+    .max-range {
+      text-align: center;
+      span {
+        font-size: 14px;
+        font-weight: 500;
+        color: $textSilver;
+      }
+      .price-number {
+        font-size: 16px;
+        font-weight: 600;
+        text-align: center;
+        color: $textGrey;
+        background-color: $background;
+        padding: 3px 0;
+        margin: 3px 0;
+        border-radius: 5px;
+      }
+    }
+    .min-range {
+      padding-left: 10px;
+    }
+    .max-range {
+      padding-right: 10px;
+    }
+  }
+  .list-of-checkbox {
+    margin-top: 1rem;
+    max-height: 220px;
+    overflow-y: auto;
+    scrollbar-color: $background;
+    scrollbar-width: thin;
+    &::-webkit-scrollbar {
+      border-radius: 10px;
+      width: 5px;
+      height: 8px;
+      background-color: $background;
+    }
+    &::-webkit-scrollbar-thumb {
+      border-radius: 10px;
+      background: rgb(192, 192, 192);
+    }
+    .form-check {
+      margin-bottom: 10px;
+      position: relative;
+      .form-check-input {
+        &:hover,
+        &:focus {
+          box-shadow: none;
+        }
+        &:checked {
+          background-color: $primary;
+          border-color: $primary;
+        }
+      }
+      .form-check-label {
+        font-size: 13px;
+        font-weight: 400;
+        color: $textGrey;
+        cursor: pointer;
+      }
+      .label-color {
+        width: 15px;
+        height: 15px;
+        border: 2px solid $borderColor;
+        border-radius: 50%;
+        display: inline-block;
+        position: absolute;
+        left: 2px;
+        top: 4px;
+      }
+    }
+  }
+  .list-links {
+    margin-top: 1rem;
+    max-height: 220px;
+    overflow-y: auto;
+    scrollbar-color: $background;
+    scrollbar-width: thin;
+    &::-webkit-scrollbar {
+      border-radius: 10px;
+      width: 5px;
+      height: 8px;
+      background-color: $background;
+    }
+    &::-webkit-scrollbar-thumb {
+      border-radius: 10px;
+      background: rgb(192, 192, 192);
+    }
+    li {
+      a {
+        font-size: 14px;
+        font-weight: 400;
+        color: $textGrey;
+        display: block;
+        padding: 5px 10px;
+      }
+    }
+  }
+  &.side-switch {
+    padding: 15px;
+    .form-switch {
+      margin-bottom: 0;
+      margin-top: 0;
+      .form-check-input {
+        &:hover,
+        &:focus {
+          box-shadow: none;
+        }
+        &:checked {
+          background-color: $primary;
+          border-color: $primary;
+        }
+      }
+      .form-check-label {
+        font-size: 13px;
+        font-weight: 400;
+        color: $textGrey;
+        cursor: pointer;
+      }
+    }
+  }
+  .apply-filter {
+    margin-top: 1rem;
+    .btn {
+      width: 100%;
+      padding: 0.5rem 1rem;
+    }
+  }
+}
+.main-title {
+  color: $textDark;
+  font-size: 22px;
+  font-weight: 800;
+  margin-top: 50px;
+}
+
+// Mobile Filter
+.mobile-advanced-Search-style {
+  visibility: hidden;
+  opacity: 0;
+  position: fixed;
+  bottom: -100%;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: $background;
+  z-index: 1500;
+  transition: all 0.2s ease;
+  &.active {
+    visibility: visible;
+    opacity: 1;
+    bottom: 0;
+    transition: all 0.2s ease;
+  }
+  .filter-header {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid $borderColor;
+    background-color: white;
+    h2 {
+      margin-bottom: 0;
+      font-size: 16px;
+      font-weight: 600;
+      color: $textDark;
+      .fi {
+        margin-left: 5px;
+        font-size: 22px;
+        position: relative;
+        top: 3px;
+      }
+    }
+    .btn-close-filter {
+      background-color: $background;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: none;
+      .fi {
+        font-size: 24px;
+        line-height: 0;
+        position: relative;
+        top: 4px;
+        color: $textGrey;
+      }
+    }
+  }
+  .filter-body {
+    background-color: $background;
+    height: calc(100% - 110px);
+    overflow-y: auto;
+    padding: 10px;
+    .clear-filter {
+      margin-bottom: 10px;
+      .btn-clearfilter {
+        background-color: transparent;
+        border: none;
+        font-size: 13px;
+        font-weight: 600;
+        padding: 5px 0;
+        color: $primary;
+      }
+    }
+  }
+  .filter-footer {
+    height: 48px;
+    border-top: 1px solid $borderColor;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .btn {
+      width: 100%;
+      height: 48px;
+      border-radius: 0;
+      &:focus {
+        box-shadow: none;
+      }
+    }
+  }
+}
+
+.sort-radio-group {
+  .form-check {
+    margin-bottom: 10px;
+    .form-check-label {
+      font-size: 16px;
+      font-weight: 400;
+      color: $textGrey;
+      cursor: pointer;
+      &:checked {
+        background-color: $primary;
+        border-color: $primary;
+      }
+    }
+  }
+}
+
+@media (max-width: 1400px) {
+  #products-section {
+    .products-list {
+      .card-course {
+        .img-container {
+          height: 170px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1199px) {
+  .card-course {
+    .img-container {
+      height: 200px;
+    }
+  }
+  #products-section {
+    .products-list {
+      .card-course,
+      .card-teacher {
+        flex: 0 0 50%;
+        width: 50%;
+      }
+    }
+  }
+}
+@media (max-width: 992px) {
+  #products-section {
+    margin-top: 120px;
+    .container {
+      padding: 0;
+    }
+    .sort-content {
+      ul,
+      .sort-title {
+        display: none;
+      }
+      .btn-sort,
+      .btn-advanced-search {
+        display: flex;
+      }
+    }
+    .list-container {
+      .myrow {
+        grid-template-columns: 100%;
+        .products-side {
+          display: none;
+        }
+        .products-main {
+          padding-right: 15px;
+        }
+      }
+    }
+    .products-list {
+      margin-top: 1.3rem;
+      .card-course {
+        flex: 0 0 33.33%;
+        width: 33.33%;
+        .img-container {
+          height: 190px;
+        }
+      }
+      .card-teacher {
+        flex: 0 0 33.33%;
+        width: 33.33%;
+        margin-bottom: 0;
+        margin-top: 2rem;
+      }
+    }
+  }
+  #mobile-title {
+    display: block;
+  }
+  #desk-title {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  .card-course {
+    .card-inner {
+      padding: 5px;
+    }
+    .img-container {
+      height: 170px;
+    }
+    .info {
+      .name {
+        font-size: 14px;
+      }
+      .author {
+        font-size: 12px;
+      }
+      .price {
+        h6 {
+          font-size: 18px;
+        }
+        .discount {
+          font-size: 14px;
+        }
+        .toman {
+          font-size: 13px;
+        }
+      }
+    }
+  }
+  .swiper-courses {
+    .swiper-button-next,
+    .swiper-button-prev {
+      width: 35px;
+      height: 35px;
+    }
+  }
+  #products-section {
+    .products-list {
+      .card-course,
+      .card-teacher {
+        flex: 0 0 50%;
+        width: 50%;
+      }
+      .card-teacher {
+        .card-inner {
+          padding: 12px !important;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 575px) {
+  .swiper-courses {
+    .swiper-button-next {
+      left: 0;
+    }
+    .swiper-button-prev {
+      right: 0;
+    }
+  }
+  #products-section {
+    margin-top: 90px;
+    .products-list {
+      .card-course {
+        padding-left: 10px;
+        .img-container {
+          height: 140px;
+        }
+      }
+      .card-teacher {
+        padding-left: 10px;
+      }
+    }
+  }
+  .main-title {
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+}
+@media (max-width: 450px) {
+  #products-section {
+    .list-container .myrow .products-main {
+      padding-right: 5px;
+    }
+    .products-list {
+      .card-course {
+        .img-container {
+          height: 120px;
+        }
+      }
+      .card-teacher {
+        .card-inner {
+          padding: 8px !important;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 370px) {
+  #products-section {
+    .products-list {
+      .card-course {
+        .img-container {
+          height: 100px;
+        }
+      }
+    }
+  }
+}
+
+/*#endregion -------------- Courses List */
