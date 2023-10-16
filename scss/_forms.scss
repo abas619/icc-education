@@ -112,12 +112,16 @@
 }
 
 .form-check {
+  padding-right: 2em;
   .form-check-label {
     font-size: 14px;
     font-weight: 400;
     color: $textGrey;
   }
   .form-check-input {
+    width: 1.2em;
+    height: 1.2em;
+    margin-right: -2em;
     &:checked {
       background-color: $primary;
       border-color: $primary;
@@ -125,6 +129,38 @@
     &:focus {
       box-shadow: none;
     }
+  }
+}
+
+.form-switch {
+  margin-bottom: 0;
+  margin-top: 0;
+  display: flex;
+  align-items: center;
+  padding-right: 3.5em;
+  .form-check-input {
+    height: 1.5em;
+    width: 2.5em;
+    border-color: $textSilver;
+    background-color: $background;
+    margin-right: -3.5em;
+    border-radius: 5rem;
+    &:hover,
+    &:focus {
+      box-shadow: none;
+    }
+    &:checked {
+      background-color: $primary;
+      border-color: $primary;
+    }
+  }
+  .form-check-label {
+    font-size: 14px;
+    font-weight: 400;
+    color: $textDark;
+    cursor: pointer;
+    margin-top: 4px;
+    margin-right: 1em;
   }
 }
 

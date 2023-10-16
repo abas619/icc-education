@@ -1,19 +1,6 @@
 /*#region ----------------- Hero */
 .home-slider-section {
   margin: 130px 0 80px 0;
-  .section-inner {
-    display: grid;
-    grid-template-columns: calc(100% - 370px) 370px;
-  }
-  .small-slider {
-    padding-right: 25px;
-    .img-content {
-      display: block;
-      img {
-        width: 100%;
-      }
-    }
-  }
 }
 
 .swiper-home {
@@ -67,12 +54,6 @@
 @media (max-width: 992px) {
   .home-slider-section {
     margin-top: 100px;
-    .section-inner {
-      grid-template-columns: 100%;
-    }
-    .small-slider {
-      display: none;
-    }
   }
 }
 

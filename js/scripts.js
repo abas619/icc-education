@@ -1,7 +1,3 @@
-AOS.init({
-  easing: "ease-in-out-sine",
-});
-
 var body = document.querySelector("body");
 
 if (document.querySelector(".btn-mobile-menu") != null) {
@@ -64,6 +60,26 @@ function clearInputValue(el) {
   mobileSearchInput.value = "";
   el.classList.remove("active");
   mobileSearchInput.focus();
+}
+
+// Show Side Filter
+function showSideFilter() {
+  const productsSide = document.querySelector(".products-side");
+  const sideOverlay = document.querySelector(".side-overlay");
+  productsSide.classList.add("active");
+  sideOverlay.classList.add("active");
+  body.classList.add("fixedposition");
+}
+function hiddenOverlay() {
+  const productsSide = document.querySelector(".products-side");
+  const sideOverlay = document.querySelector(".side-overlay");
+  productsSide.classList.remove("active");
+  sideOverlay.classList.remove("active");
+  body.classList.remove("fixedposition");
+}
+
+function addActiveClass(el) {
+  el.classList.toggle("active");
 }
 
 // Show Filter on Mobile

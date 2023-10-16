@@ -140,13 +140,19 @@
     .myrow {
       display: grid;
       grid-template-columns: 300px auto;
-      .products-main {
-        padding-right: 25px;
-        .main-inner {
-          margin-top: 1rem;
-        }
-      }
     }
+  }
+  .products-side {
+    position: relative;
+  }
+  .products-main {
+    padding-right: 25px;
+    .main-inner {
+      margin-top: 1rem;
+    }
+  }
+  .side-inner {
+    background-color: white;
   }
   .sort-content {
     @include displayFlex(flex, center, flex-start);
@@ -171,12 +177,13 @@
       li {
         margin-left: 10px;
         a {
-          border-radius: 5px;
+          border-radius: 0;
           display: block;
           font-size: 13px;
           font-weight: 400;
           color: $textGrey;
           padding: 3px 5px;
+          background-color: $background;
         }
         &.active a {
           background-color: $primary;
@@ -190,7 +197,7 @@
       margin-left: 15px;
       background-color: white;
       border: 1px solid $borderColor;
-      border-radius: 5px;
+      border-radius: 0;
       padding: 8px;
       font-size: 12px;
       font-weight: 400;
@@ -203,9 +210,12 @@
         position: relative;
         top: 2px;
       }
+      &:hover {
+        border-color: $primary;
+        color: $primary;
+      }
     }
   }
-
   .products-list {
     @include displayFlex(flex, flex-start, flex-start);
     flex-wrap: wrap;
@@ -234,6 +244,21 @@
       }
     }
   }
+  .btn-close-sidebar {
+    position: absolute;
+    left: 10px;
+    top: 15px;
+    width: 36px;
+    height: 36px;
+    background-color: rgba($color: #000000, $alpha: 0.1);
+    box-shadow: $boxshadow;
+    border: none;
+    font-size: 16px;
+    color: $textGrey;
+    @include displayFlex(none, center, center);
+    z-index: 888;
+    border-radius: 50%;
+  }
 }
 
 #mobile-title {
@@ -244,26 +269,18 @@
     font-weight: 800;
   }
 }
-#desk-title {
-  display: block;
-  margin: 1.2rem 0 30px 0;
-  h5 {
-    font-size: 24px;
-    font-weight: 800;
-  }
-}
 
 .side-box {
-  background-color: $background;
   padding: 20px 15px 10px;
-  border-radius: 10px;
-  margin-bottom: 15px;
+  margin: 5px 0;
+  border-bottom: 1px solid $borderColor;
+  &:last-child {
+    border-bottom: none;
+  }
   .box-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    @include displayFlex(flex, center, space-between);
     h2 {
-      font-size: 15px;
+      font-size: 16px;
       font-weight: 600;
       color: $textDark;
       margin-bottom: 0;
@@ -281,7 +298,7 @@
   .box-body {
     margin-top: 25px;
     .title {
-      font-size: 13px;
+      font-size: 14px;
       font-weight: 500;
       color: $textDark;
       margin: 15px 0;
@@ -297,13 +314,9 @@
         border-radius: 30px;
         padding: 5px 12px 5px 6px;
         margin: 0 0 8px 8px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        @include displayFlex(flex, center, center);
         a {
-          display: flex;
-          align-items: center;
-          justify-content: center;
+          @include displayFlex(flex, center, center);
           width: 20px;
           height: 20px;
           background-color: $primary;
@@ -343,7 +356,7 @@
         margin-bottom: 10px;
         transition: all 0.2s ease-in-out;
         &::before {
-          content: "\f152";
+          content: "\f25e";
           font-family: $iconFontRegular;
           position: absolute;
           top: -2px;
@@ -360,25 +373,15 @@
       }
       .sub-list-category {
         height: 200px;
-        overflow: hidden;
+        overflow-y: auto;
         transition: all 0.2s ease-in-out;
         .sub-item {
-          font-size: 13px;
+          font-size: 14px;
           font-weight: 400;
           color: $textGrey;
           position: relative;
-          padding-right: 30px;
+          padding-right: 10px;
           transition: all 0.2s ease-in-out;
-          &.haveIcon {
-            &::before {
-              content: "\f152";
-              font-family: $iconFontRegular;
-              position: absolute;
-              top: -2px;
-              right: 12px;
-              font-size: 14px;
-            }
-          }
           &.active {
             color: $primary;
             font-weight: 500;
@@ -428,7 +431,6 @@
     .btn-collapse {
       padding: 0;
       height: 30px;
-      background-color: $background;
       .title {
         font-size: 15px;
         font-weight: 600;
@@ -441,7 +443,7 @@
     }
   }
   .range-price-filter {
-    padding: 0 15px 10px 30px;
+    padding: 0 10px 5px 20px;
     margin-top: 2rem;
   }
   .range-value-inner {
@@ -550,26 +552,6 @@
   }
   &.side-switch {
     padding: 15px;
-    .form-switch {
-      margin-bottom: 0;
-      margin-top: 0;
-      .form-check-input {
-        &:hover,
-        &:focus {
-          box-shadow: none;
-        }
-        &:checked {
-          background-color: $primary;
-          border-color: $primary;
-        }
-      }
-      .form-check-label {
-        font-size: 13px;
-        font-weight: 400;
-        color: $textGrey;
-        cursor: pointer;
-      }
-    }
   }
   .apply-filter {
     margin-top: 1rem;
@@ -579,96 +561,24 @@
     }
   }
 }
-.main-title {
-  color: $textDark;
-  font-size: 22px;
-  font-weight: 800;
-  margin-top: 50px;
-}
+// .main-title {
+//   color: $textDark;
+//   font-size: 22px;
+//   font-weight: 800;
+//   margin-top: 50px;
+// }
 
-// Mobile Filter
-.mobile-advanced-Search-style {
-  visibility: hidden;
-  opacity: 0;
+.side-overlay {
   position: fixed;
-  bottom: -100%;
+  top: 0;
   right: 0;
   width: 100%;
   height: 100%;
-  background-color: $background;
-  z-index: 1500;
-  transition: all 0.2s ease;
+  background-color: rgba($color: #000000, $alpha: 0.6);
+  z-index: 995;
+  display: none;
   &.active {
-    visibility: visible;
-    opacity: 1;
-    bottom: 0;
-    transition: all 0.2s ease;
-  }
-  .filter-header {
-    padding: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border: 1px solid $borderColor;
-    background-color: white;
-    h2 {
-      margin-bottom: 0;
-      font-size: 16px;
-      font-weight: 600;
-      color: $textDark;
-      .fi {
-        margin-left: 5px;
-        font-size: 22px;
-        position: relative;
-        top: 3px;
-      }
-    }
-    .btn-close-filter {
-      background-color: $background;
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      border: none;
-      .fi {
-        font-size: 24px;
-        line-height: 0;
-        position: relative;
-        top: 4px;
-        color: $textGrey;
-      }
-    }
-  }
-  .filter-body {
-    background-color: $background;
-    height: calc(100% - 110px);
-    overflow-y: auto;
-    padding: 10px;
-    .clear-filter {
-      margin-bottom: 10px;
-      .btn-clearfilter {
-        background-color: transparent;
-        border: none;
-        font-size: 13px;
-        font-weight: 600;
-        padding: 5px 0;
-        color: $primary;
-      }
-    }
-  }
-  .filter-footer {
-    height: 48px;
-    border-top: 1px solid $borderColor;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    .btn {
-      width: 100%;
-      height: 48px;
-      border-radius: 0;
-      &:focus {
-        box-shadow: none;
-      }
-    }
+    display: block;
   }
 }
 
@@ -718,7 +628,7 @@
 }
 @media (max-width: 992px) {
   #products-section {
-    margin-top: 120px;
+    margin-top: 100px;
     .container {
       padding: 0;
     }
@@ -735,13 +645,27 @@
     .list-container {
       .myrow {
         grid-template-columns: 100%;
-        .products-side {
-          display: none;
-        }
-        .products-main {
-          padding-right: 15px;
-        }
       }
+    }
+    .products-side {
+      position: fixed;
+      top: 0;
+      right: -300px;
+      height: 100vh;
+      z-index: 999;
+      width: 300px;
+      transition: all 0.25s ease-in-out;
+      &.active {
+        right: 0;
+      }
+      .side-inner {
+        height: 100%;
+        overflow-y: auto;
+        padding: 20px 0;
+      }
+    }
+    .products-main {
+      padding-right: 15px;
     }
     .products-list {
       margin-top: 1.3rem;
@@ -759,12 +683,12 @@
         margin-top: 2rem;
       }
     }
+    .btn-close-sidebar {
+      display: flex;
+    }
   }
   #mobile-title {
     display: block;
-  }
-  #desk-title {
-    display: none;
   }
 }
 @media (max-width: 768px) {
@@ -840,11 +764,11 @@
       }
     }
   }
-  .main-title {
-    font-size: 18px;
-    text-align: center;
-    margin-bottom: 1.5rem;
-  }
+  // .main-title {
+  //   font-size: 18px;
+  //   text-align: center;
+  //   margin-bottom: 1.5rem;
+  // }
 }
 @media (max-width: 450px) {
   #products-section {
