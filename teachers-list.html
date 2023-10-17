@@ -8,7 +8,7 @@
     <meta name="theme-color" content="#007ddf" />
     <meta name="msapplication-navbutton-color" content="#007ddf">
     <meta name="apple-mobile-web-app-status-bar-style" content="#007ddf">
-    <title>آموزشگاه ICC | لیست نمایش دوره‌ها</title>
+    <title>آموزشگاه ICC | لیست اساتید</title>
     <link href="css/bootstrap.rtl.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
     <link rel="stylesheet" href="scss/main.css">
@@ -97,13 +97,13 @@
                                 class="fi fi-rr-search"></i></button>
                     </div>
                     <!-- قبل لاگین -->
-                    <button class="btn btn-primary icon-right">
+                    <!-- <button class="btn btn-primary icon-right">
                         <span class="icon"><i class="fi fi-rr-user-add"></i></span>
                         <span class="text">ورود/ثبت‌ نام</span>
-                    </button>
+                    </button> -->
 
                     <!-- وقتی لاگین کرد -->
-                    <!-- <div class="nav-login">
+                    <div class="nav-login">
                         <button class="btn btn-primary-outline icon-right text-truncate">
                             <span class="icon"><i class="fi fi-rr-user"></i></span>
                             <span class="text">وحید حسینی</span>
@@ -114,11 +114,12 @@
                                 <li><a href="#"><i class="fi fi-rr-bookmark"></i>لیست‌ها</a></li>
                                 <li><a href="#"><i class="fi fi-rr-play-alt"></i>دوره‌ها</a></li>
                                 <hr>
-                                <li><a href="#" data-bs-toggle="modal" data-bs-target="#modal-logout"><i class="fi fi-rr-sign-out-alt"></i>خروج از
+                                <li><a href="#" data-bs-toggle="modal" data-bs-target="#modal-logout"><i
+                                            class="fi fi-rr-sign-out-alt"></i>خروج از
                                         حساب</a></li>
                             </ul>
                         </div>
-                    </div> -->
+                    </div>
 
                 </div>
             </div>
@@ -289,133 +290,72 @@
                     </div>
                     <div class="products-main">
                         <div class="main-inner">
-                            <div id="mobile-title">
-                                <h5>لیست محصولات</h5>
-                            </div>
+                            <h5 class="list-title">لیست محصولات</h5>
                             <div class="sort-content">
-                                <h2 class="sort-title"><i class="fi fi-rr-settings-sliders"></i>مرتب سازی براساس :</h2>
-                                <ul>
-                                    <li class="active"><a href="#">پربازدیدترین</a></li>
-                                    <li><a href="#">پرفروشترین</a></li>
-                                    <li><a href="#">جدیدترین</a></li>
-                                    <li><a href="#">ارزان‌ترین</a></li>
-                                    <li><a href="#">گران‌ترین</a></li>
-                                </ul>
                                 <button type="button" class="btn-advanced-search" onclick="showSideFilter()"><i
                                         class="fi fi-rr-settings-sliders"></i>جستجوی
                                     پیشرفته</button>
-                                <button type="button" class="btn-sort" data-bs-toggle="modal"
-                                    data-bs-target="#modal-sort"><i class="fi fi-rr-apps-sort"></i>مرتب سازی :
-                                    <span>جدیدترین</span></button>
                             </div>
                             <div class="products-list">
-                                <div class="card-course">
-                                    <a href="#" class="card-inner">
-                                        <div class="img-container">
-                                            <div class="img-inner">
-                                                <img src="https://via.placeholder.com/520x465/ccc.png" alt="image-name">
-                                            </div>
+                                <div class="card-teacher type-2">
+                                    <div class="card-inner">
+                                        <div class="user-image">
+                                            <img src="images/thumb-120x120.png" alt="user-name">
                                         </div>
                                         <div class="info">
-                                            <h3 class="name">کتاب صوتی | کواکتیوکوچینگ</h3>
-                                            <h4 class="author">هنری کیمسی</h4>
-                                            <div class="price">
-                                                <div class="real">
-                                                    <div class="discount">180,000</div>
-                                                    <h6>150,000</h6>
-                                                </div>
-                                                <span class="toman">تومان</span>
-                                            </div>
+                                            <h2 class="name">نام مدرس</h2>
+                                            <h3 class="job">حوزه فعالیت</h3>
                                         </div>
-                                    </a>
+                                        <div class="btns-group">
+                                            <a href="#" class="btn btn-primary-outline icon-left">مشاهده دوره‌ها<i
+                                                    class="fi fi-rr-arrow-small-left"></i></a>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="card-course">
-                                    <a href="#" class="card-inner">
-                                        <div class="img-container">
-                                            <div class="img-inner">
-                                                <img src="https://via.placeholder.com/520x465/ccc.png" alt="image-name">
-                                            </div>
+                                <div class="card-teacher type-2">
+                                    <div class="card-inner">
+                                        <div class="user-image">
+                                            <img src="images/thumb-120x120.png" alt="user-name">
                                         </div>
                                         <div class="info">
-                                            <h3 class="name">کتاب صوتی | کواکتیوکوچینگ</h3>
-                                            <h4 class="author">هنری کیمسی</h4>
-                                            <div class="price">
-                                                <div class="real">
-                                                    <div class="discount">180,000</div>
-                                                    <h6>150,000</h6>
-                                                </div>
-                                                <span class="toman">تومان</span>
-                                            </div>
+                                            <h2 class="name">نام مدرس</h2>
+                                            <h3 class="job">حوزه فعالیت</h3>
                                         </div>
-                                    </a>
+                                        <div class="btns-group">
+                                            <a href="#" class="btn btn-primary-outline icon-left">مشاهده دوره‌ها<i
+                                                    class="fi fi-rr-arrow-small-left"></i></a>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="card-course">
-                                    <a href="product-details.html" class="card-inner">
-                                        <div class="img-container">
-                                            <div class="img-inner">
-                                                <img src="https://via.placeholder.com/520x465/ccc.png" alt="image-name">
-                                            </div>
+                                <div class="card-teacher type-2">
+                                    <div class="card-inner">
+                                        <div class="user-image">
+                                            <img src="images/thumb-120x120.png" alt="user-name">
                                         </div>
                                         <div class="info">
-                                            <h3 class="name">کتاب صوتی | کواکتیوکوچینگ</h3>
-                                            <h4 class="author">هنری کیمسی</h4>
-                                            <div class="price">
-                                                <div class="real">150,000</div>
-                                                <span class="toman">تومان</span>
-                                            </div>
+                                            <h2 class="name">نام مدرس</h2>
+                                            <h3 class="job">حوزه فعالیت</h3>
                                         </div>
-                                    </a>
+                                        <div class="btns-group">
+                                            <a href="#" class="btn btn-primary-outline icon-left">مشاهده دوره‌ها<i
+                                                    class="fi fi-rr-arrow-small-left"></i></a>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="card-course">
-                                    <a href="product-details.html" class="card-inner">
-                                        <div class="img-container">
-                                            <div class="img-inner">
-                                                <img src="https://via.placeholder.com/520x465/ccc.png" alt="image-name">
-                                            </div>
+                                <div class="card-teacher type-2">
+                                    <div class="card-inner">
+                                        <div class="user-image">
+                                            <img src="images/thumb-120x120.png" alt="user-name">
                                         </div>
                                         <div class="info">
-                                            <h3 class="name">کتاب صوتی | کواکتیوکوچینگ</h3>
-                                            <h4 class="author">هنری کیمسی</h4>
-                                            <div class="price">
-                                                <div class="real">150,000</div>
-                                                <span class="toman">تومان</span>
-                                            </div>
+                                            <h2 class="name">نام مدرس</h2>
+                                            <h3 class="job">حوزه فعالیت</h3>
                                         </div>
-                                    </a>
-                                </div>
-                                <div class="card-course">
-                                    <a href="product-details.html" class="card-inner">
-                                        <div class="img-container">
-                                            <div class="img-inner">
-                                                <img src="https://via.placeholder.com/520x465/ccc.png" alt="image-name">
-                                            </div>
+                                        <div class="btns-group">
+                                            <a href="#" class="btn btn-primary-outline icon-left">مشاهده دوره‌ها<i
+                                                    class="fi fi-rr-arrow-small-left"></i></a>
                                         </div>
-                                        <div class="info">
-                                            <h3 class="name">کتاب صوتی | کواکتیوکوچینگ</h3>
-                                            <h4 class="author">هنری کیمسی</h4>
-                                            <div class="price">
-                                                <div class="real">150,000</div>
-                                                <span class="toman">تومان</span>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="card-course">
-                                    <a href="product-details.html" class="card-inner">
-                                        <div class="img-container">
-                                            <div class="img-inner">
-                                                <img src="https://via.placeholder.com/520x465/ccc.png" alt="image-name">
-                                            </div>
-                                        </div>
-                                        <div class="info">
-                                            <h3 class="name">کتاب صوتی | کواکتیوکوچینگ</h3>
-                                            <h4 class="author">هنری کیمسی</h4>
-                                            <div class="price">
-                                                <div class="real">150,000</div>
-                                                <span class="toman">تومان</span>
-                                            </div>
-                                        </div>
-                                    </a>
+                                    </div>
                                 </div>
                             </div>
                             <div class="my-pagination">

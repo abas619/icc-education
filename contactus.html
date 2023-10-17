@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="fa" class="no-js" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#007ddf" />
+    <meta name="msapplication-navbutton-color" content="#007ddf">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#007ddf">
+    <title>آموزشگاه ICC | درباره‌ما</title>
+    <link href="css/bootstrap.rtl.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="scss/main.css">
+    <link rel="stylesheet" href="plugins/noUIslider/nouislider.css">
+
+    <!-- Font Icons -->
+    <link href="css/all.rounded.css" rel="stylesheet" type="text/css" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="images/small-icon.png" />
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="images/logo-72x72.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="images/logo-114x114.png" />
+
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="myNavbar">
+        <div class="container-lg">
+            <div class="header-inner">
+                <div class="mobile-links">
+                    <button type="button" class="btn-mobile-menu"><i class="fi fi-rr-menu-burger"></i></button>
+                    <!-- Sidebar Menu -->
+                    <div id="sidebar-menu">
+                        <div class="sidebar-header">
+                            <div class="sidebar-logo">
+                                <a href="index.html">
+                                    <img src="images/logo.svg" class="sidebarlogo" alt="logo">
+                                </a>
+                            </div>
+                            <div class="sidebar-close">
+                                <button class="btn-close-menu"><i class="fi fi-rr-cross"></i></button>
+                            </div>
+                        </div>
+                        <ul class="category-list">
+                            <li class="item"><a href="#">کمیسیون‌ها</a></li>
+                            <li class="item"><a href="#">آموزش</a></li>
+                            <li class="item"><a href="#">انتشارات</a></li>
+                            <li class="item"><a href="#">درباره ما</a></li>
+                            <li class="item"><a href="#">تماس با ما</a></li>
+                        </ul>
+                        <div class="socials-icon">
+                            <ul>
+                                <li><a href="#"><i class="fi fi-brands-telegram"></i></a></li>
+                                <li><a href="#"><i class="fi fi-brands-instagram"></i></a></li>
+                                <li><a href="#"><i class="fi fi-brands-linkedin"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="overlay-back"></div>
+                </div>
+                <div class="nav-logo">
+                    <a href="index.html">
+                        <img src="images/logo.svg" alt="logo">
+                    </a>
+                </div>
+                <div class="nav-menus">
+                    <ul class="menu-list">
+                        <li class="link"><a href="#">کمیسیون‌ها</a></li>
+                        <li class="link"><a href="#">آموزش</a></li>
+                        <li class="link have-child">
+                            <a href="#">انتشارات</a>
+                            <ul>
+                                <li><a href="#">مقالات</a></li>
+                                <li><a href="#">بولتن خبری</a></li>
+                                <li><a href="#">مقالات و دستورالعمل های ICC</a></li>
+                            </ul>
+                        </li>
+                        <li class="link"><a href="#">درباره ما</a></li>
+                        <li class="link"><a href="#">تماس با ما</a></li>
+                    </ul>
+                </div>
+                <div class="nav-action">
+                    <!-- Basket -->
+                    <div class="nav-basket">
+                        <button class="btn-nav-button">
+                            <i class="fi fi-rr-shopping-bag"></i>
+                            <span class="badge">3</span>
+                        </button>
+                    </div>
+                    <!-- Search -->
+                    <div class="nav-search">
+                        <button class="btn-nav-button" onclick="showDesktopSearch()"><i
+                                class="fi fi-rr-search"></i></button>
+                    </div>
+                    <!-- قبل لاگین -->
+                    <!-- <button class="btn btn-primary icon-right">
+                        <span class="icon"><i class="fi fi-rr-user-add"></i></span>
+                        <span class="text">ورود/ثبت‌ نام</span>
+                    </button> -->
+
+                    <!-- وقتی لاگین کرد -->
+                    <div class="nav-login">
+                        <button class="btn btn-primary-outline icon-right text-truncate">
+                            <span class="icon"><i class="fi fi-rr-user"></i></span>
+                            <span class="text">وحید حسینی</span>
+                        </button>
+                        <div class="user-menu">
+                            <ul>
+                                <li><a href="#"><i class="fi fi-rr-user"></i>پروفایل من</a></li>
+                                <li><a href="#"><i class="fi fi-rr-bookmark"></i>لیست‌ها</a></li>
+                                <li><a href="#"><i class="fi fi-rr-play-alt"></i>دوره‌ها</a></li>
+                                <hr>
+                                <li><a href="#" data-bs-toggle="modal" data-bs-target="#modal-logout"><i
+                                            class="fi fi-rr-sign-out-alt"></i>خروج از
+                                        حساب</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Desktop Search -->
+    <div id="desktop-search-content" class="">
+        <button type="button" class="btn-arrow-back" onclick="hideDesktopSearch()">
+            <i class="fi fi-rr-cross"></i>
+        </button>
+        <div class="search-inner">
+            <div class="search-input">
+                <input type="text" class="desktop-search-input" placeholder="جستجو..." onkeyup="changeValue(this)">
+                <button type="button" class="btn-clear" onclick="clearInputValue(this)"><i
+                        class="fi fi-rr-trash"></i></button>
+                <button type="button" class="btn-search-result">جستجو</button>
+            </div>
+            <div class="list-result">
+                <ul class="tags">
+                    <li><a href="#">کسب‌و کار آنلاین</a></li>
+                    <li><a href="#">مدیریت زمان</a></li>
+                    <li><a href="#">کوچینگ</a></li>
+                    <li><a href="#">ثروتمند شوید</a></li>
+                    <li><a href="#">نجات از رکود</a></li>
+                    <li><a href="#">مدیریت</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page Header -->
+    <div class="page-header">
+        <div class="header-inner" style="background-image: url(images/page-header-bg.jpg);">
+            <div class="container-lg">
+                <h1>تماس با ما</h1>
+                <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Master Page Section -->
+    <div class="masterpage-section">
+        <div class="container-lg">
+            <div class="contact-us-section">
+                <div class="grid-contact">
+                    <div class="contant-inner call-contact">
+                        <h6>از طریق راه های زیر با ما در ارتباط باشید</h6>
+                        <ul class="contact-list">
+                            <li>
+                                <i class="fi fi-rr-phone-call"></i>
+                                <a href="tel:+4733378901">028-312-4567</a>
+                            </li>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                    version="1.1" viewBox="0 0 24 24" style="enable-background:new 0 0 24 24;"
+                                    xml:space="preserve">
+                                    <path style="fill-rule:evenodd;clip-rule:evenodd;"
+                                        d="M12,0C5.373,0,0,5.373,0,12s5.373,12,12,12s12-5.373,12-12S18.627,0,12,0z    M17.562,8.161c-0.18,1.897-0.962,6.502-1.359,8.627c-0.168,0.9-0.5,1.201-0.82,1.23c-0.697,0.064-1.226-0.461-1.901-0.903   c-1.056-0.692-1.653-1.123-2.678-1.799c-1.185-0.781-0.417-1.21,0.258-1.911c0.177-0.184,3.247-2.977,3.307-3.23   c0.007-0.032,0.015-0.15-0.056-0.212s-0.174-0.041-0.248-0.024c-0.106,0.024-1.793,1.139-5.062,3.345   c-0.479,0.329-0.913,0.489-1.302,0.481c-0.428-0.009-1.252-0.242-1.865-0.442c-0.751-0.244-1.349-0.374-1.297-0.788   c0.027-0.216,0.324-0.437,0.892-0.663c3.498-1.524,5.831-2.529,6.998-3.015c3.333-1.386,4.025-1.627,4.477-1.635   C17.472,7.214,17.608,7.681,17.562,8.161z" />
+                                </svg>
+                                <a href="#">@cochera</a>
+                            </li>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                    version="1.1" viewBox="0 0 24 24" style="enable-background:new 0 0 24 24;"
+                                    xml:space="preserve">
+                                    <path
+                                        d="M12,2.162c3.204,0,3.584,0.012,4.849,0.07c1.308,0.06,2.655,0.358,3.608,1.311c0.962,0.962,1.251,2.296,1.311,3.608   c0.058,1.265,0.07,1.645,0.07,4.849c0,3.204-0.012,3.584-0.07,4.849c-0.059,1.301-0.364,2.661-1.311,3.608   c-0.962,0.962-2.295,1.251-3.608,1.311c-1.265,0.058-1.645,0.07-4.849,0.07s-3.584-0.012-4.849-0.07   c-1.291-0.059-2.669-0.371-3.608-1.311c-0.957-0.957-1.251-2.304-1.311-3.608c-0.058-1.265-0.07-1.645-0.07-4.849   c0-3.204,0.012-3.584,0.07-4.849c0.059-1.296,0.367-2.664,1.311-3.608c0.96-0.96,2.299-1.251,3.608-1.311   C8.416,2.174,8.796,2.162,12,2.162 M12,0C8.741,0,8.332,0.014,7.052,0.072C5.197,0.157,3.355,0.673,2.014,2.014   C0.668,3.36,0.157,5.198,0.072,7.052C0.014,8.332,0,8.741,0,12c0,3.259,0.014,3.668,0.072,4.948c0.085,1.853,0.603,3.7,1.942,5.038   c1.345,1.345,3.186,1.857,5.038,1.942C8.332,23.986,8.741,24,12,24c3.259,0,3.668-0.014,4.948-0.072   c1.854-0.085,3.698-0.602,5.038-1.942c1.347-1.347,1.857-3.184,1.942-5.038C23.986,15.668,24,15.259,24,12   c0-3.259-0.014-3.668-0.072-4.948c-0.085-1.855-0.602-3.698-1.942-5.038c-1.343-1.343-3.189-1.858-5.038-1.942   C15.668,0.014,15.259,0,12,0z" />
+                                    <path
+                                        d="M12,5.838c-3.403,0-6.162,2.759-6.162,6.162c0,3.403,2.759,6.162,6.162,6.162s6.162-2.759,6.162-6.162   C18.162,8.597,15.403,5.838,12,5.838z M12,16c-2.209,0-4-1.791-4-4s1.791-4,4-4s4,1.791,4,4S14.209,16,12,16z" />
+                                    <circle cx="18.406" cy="5.594" r="1.44" />
+                                </svg>
+                                <a href="#">@cochera</a>
+                            </li>
+                            <li>
+                                <i class="fi fi-rr-envelope"></i>
+                                <a href="mailto:someone@example.com">cochera@gmail.com</a>
+                            </li>
+                            <li><i class="fi fi-rr-marker"></i>قزوین ، سعدی ، ...
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="grid-form">
+                    <div class="contant-inner form-contacts">
+                        <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است،
+                            چاپگرها می‌باشد</p>
+                        <form>
+                            <div class="forms-group">
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-12">
+                                        <div class="inputgroup">
+                                            <label>نام و نام خانوادگی (اجباری)</label>
+                                            <input type="text" class="input" placeholder=""
+                                                pattern="([\u0621\u0622\u0623\u0624\u0625\u0626\u0627\u0628\u062A\u062B\u062C\u062D\u062E\u062F\u0630\u0631\u0632\u0633\u0634\u0635\u0636\u0637\u0638\u0639\u063A\u0641\u0642\u0643\u0644\u0645\u0646\u0647\u0648\u0649\u064A\u0672\u0673\u067E\u0686\u0698\u06A9\u06AF\u06BE\u06C1\u06CC\s]){2,30}$"
+                                                maxlength="30" required>
+                                            <div class="icon"><i class="fi fi-rr-user"></i></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-12">
+                                        <div class="inputgroup">
+                                            <label>عنوان (اجباری)</label>
+                                            <input type="text" class="input" placeholder=""
+                                                pattern="([\u0621\u0622\u0623\u0624\u0625\u0626\u0627\u0628\u062A\u062B\u062C\u062D\u062E\u062F\u0630\u0631\u0632\u0633\u0634\u0635\u0636\u0637\u0638\u0639\u063A\u0641\u0642\u0643\u0644\u0645\u0646\u0647\u0648\u0649\u064A\u0672\u0673\u067E\u0686\u0698\u06A9\u06AF\u06BE\u06C1\u06CC\s]){2,30}$"
+                                                maxlength="100" required>
+                                            <div class="icon"><i class="fi fi-rr-pencil"></i></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-12">
+                                        <div class="inputgroup no-icon">
+                                            <label>آدرس ایمیل</label>
+                                            <input type="email" class="input" placeholder="">
+                                            <div class="icon"><i class="fi fi-rr-envelope"></i></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-12">
+                                        <div class="select-group">
+                                            <label>موضوع</label>
+                                            <select class="form-select">
+                                                <option value="0" selected disabled>ارتباط با</option>
+                                                <option value="1">انتقاد</option>
+                                                <option value="2">پیشنهاد</option>
+                                                <option value="3">ارتباط مستقیم با مدیر</option>
+                                                <option value="4">گرازش</option>
+                                                <option value="5">سایر</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <div class="textarea-group">
+                                            <textarea class="form-control" cols="30" rows="4"
+                                                placeholder="متن خود را وارد کنید..."></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="buttons-group">
+                                <button type="submit" class="btn btn-primary icon-right"><i
+                                        class="fi fi-rr-check"></i>ارسال
+                                    پیام</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-inner">
+                <div class="row">
+                    <div class="col-lg-4 col-md-12">
+                        <div class="information">
+                            <div class="logo">
+                                <a href="index.html">
+                                    <img src="images/logo-white.svg" alt="logo">
+                                </a>
+                            </div>
+                            <div class="description">
+                                <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان
+                                    گرافیک است چاپگرها و متون بلکه روزنامه
+                                    و مجله در ستون و سطرآنچنان که لازم است</p>
+                            </div>
+                            <div class="e-sign">
+                                <ul>
+                                    <li>
+                                        <a href="#"><img src="https://via.placeholder.com/300x300/ccc.png" alt=""></a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><img src="https://via.placeholder.com/300x300/ccc.png" alt=""></a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><img src="https://via.placeholder.com/300x300/ccc.png" alt=""></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-5 col-md-6">
+                        <div class="links">
+                            <h5 class="footer-title">دسترسی سریع</h5>
+                            <ul>
+                                <li><a href="#">صفحه‌ اصلی</a></li>
+                                <li><a href="#">خدمات مشورتی</a></li>
+                                <li><a href="#">مقالات و دستورالعمل‌ها</a></li>
+                                <li><a href="#">انتشارات</a></li>
+                                <li><a href="#">اخبار</a></li>
+                                <li><a href="#">درباره ما</a></li>
+                                <li><a href="#">آموزش</a></li>
+                                <li><a href="#">شرایط عضویت</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="socials-information">
+                            <h5 class="footer-title">ارتباط با ما</h5>
+                            <ul class="icons-list">
+                                <li><a href="#"><i class="fi fi-brands-linkedin"></i></a></li>
+                                <li><a href="#"><i class="fi fi-brands-telegram"></i></a></li>
+                                <li><a href="#"><i class="fi fi-brands-instagram"></i></a></li>
+                            </ul>
+                            <div class="call-content">
+                                <ul>
+                                    <li>
+                                        شماره تماس :
+                                        <div class="desc">
+                                            <a href="tel:0215648893">021-5648893</a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        آدرس :
+                                        <div class="desc">تهران ملاصدرا، نبش کوچه</div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <span>تمامی حقوق متعلق به کمیته ایرانی اتاق بازرگانی بین المللی است. طراحی و اجرا توسط <a
+                        href="#">آی‌تی‌سان</a></span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Bottom Navbar -->
+    <div class="mobile-bottom-navbar">
+        <div class="container">
+            <div class="navbar-inner">
+                <div class="item active">
+                    <a href="#">
+                        <div class="icon"><i class="fi fi-rr-home"></i></div>
+                        <h6>خانه</h6>
+                    </a>
+                </div>
+                <div class="item">
+                    <a href="#">
+                        <div class="icon"><i class="fi fi-rr-apps"></i></div>
+                        <h6>دسته بندی</h6>
+                    </a>
+                </div>
+                <div class="item">
+                    <a href="#">
+                        <div class="icon"><i class="fi fi-rr-search"></i></div>
+                        <h6>جستجو</h6>
+                    </a>
+                </div>
+                <div class="item">
+                    <a href="#">
+                        <div class="icon"><i class="fi fi-rr-user"></i></div>
+                        <h6>حساب کاربری</h6>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Scripts -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="plugins/swiperjs/swiper-initial.js"></script>
+    <script src="js/scripts.js"></script>
+    <script src="plugins/noUIslider/nouislider.min.js"></script>
+    <script src="plugins/noUIslider/nouislider.initial.js"></script>
+
+</body>
+
+</html>

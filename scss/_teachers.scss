@@ -62,7 +62,7 @@
   padding: 5px;
   .card-inner {
     background-color: rgba($color: white, $alpha: 0.2);
-    border-radius: 10px;
+    border-radius: 0;
     padding: 15px 15px 20px 15px;
     text-align: center;
     display: block;
@@ -89,7 +89,7 @@
     border: 3px solid white;
     position: relative;
     top: 0;
-    box-shadow: 0 3px 15px rgba($color: #000000, $alpha: 0.4);
+    box-shadow: 0 5px 20px rgba($color: #000000, $alpha: 0.2);
     transition: all 0.2s ease-in-out;
     img {
       width: 100%;
@@ -113,6 +113,33 @@
       color: rgba($color: white, $alpha: 0.9);
       margin-bottom: 0;
       @include textTruncate(1);
+    }
+  }
+  .btns-group {
+    margin-top: 15px;
+    .btn {
+      width: 100%;
+      font-size: 14px;
+    }
+  }
+  &.type-2 {
+    .card-inner {
+      background-color: white;
+      padding-bottom: 15px;
+    }
+    .user-image {
+      width: 95px;
+      height: 95px;
+    }
+    .info {
+      .name {
+        font-size: 16px;
+        color: $textDark;
+      }
+      .job {
+        font-size: 14px;
+        color: $textGrey;
+      }
     }
   }
 }

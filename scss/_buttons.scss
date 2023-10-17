@@ -79,6 +79,21 @@
     }
   }
 }
+.btn-danger {
+  background: $error;
+  color: white;
+  &:hover,
+  &:focus {
+    color: white;
+    border-color: $error;
+    background: $error;
+    &::before {
+      width: 100%;
+      background: rgba($color: white, $alpha: 0.7);
+      opacity: 0;
+    }
+  }
+}
 .btn-primary-outline {
   background-color: white;
   border-color: $primary;

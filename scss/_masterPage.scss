@@ -1,0 +1,116 @@
+/*#region ----------------- MasterPage */
+.masterpage-section {
+  margin: 50px 0 100px 0;
+  .description {
+    p {
+      text-align: justify;
+    }
+  }
+}
+.master-title {
+  text-align: center;
+  margin: 3rem 0;
+  h2 {
+    font-size: 24px;
+    font-weight: 800;
+  }
+}
+.contact-us-section {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  .grid-contact {
+    padding: 0 0 0 10px;
+  }
+  .grid-form {
+    padding: 0 10px 0 0;
+  }
+  .contant-inner {
+    background-color: white;
+    border-radius: 0;
+    padding: 30px;
+    height: 100%;
+    h6 {
+      font-size: 16px;
+      color: $textDark;
+      line-height: 27px;
+    }
+  }
+  .contact-list {
+    margin: 40px 0 0 0;
+    text-align: right;
+    li {
+      margin: 15px 0;
+      font-size: 16px;
+      font-weight: 500;
+      padding: 20px 15px;
+      border-radius: 0;
+      position: relative;
+      overflow: hidden;
+      color: $textDark;
+      @include gradient(90deg, rgba(0, 125, 223, 0.1), white);
+      a {
+        color: $textDark;
+        text-decoration: underline dashed 1px $primary !important;
+      }
+      svg {
+        position: absolute;
+        left: 0;
+        bottom: -10px;
+        width: 48px;
+        font-size: 48px;
+        fill: $primary;
+        transform: rotate(15deg);
+      }
+
+      .fi {
+        position: absolute;
+        left: -3px;
+        bottom: -10px;
+        font-size: 48px;
+        color: $primary;
+        transform: rotate(15deg);
+        list-style: 0 !important;
+        display: inline-block !important;
+      }
+    }
+  }
+  .buttons-group {
+    text-align: center;
+    margin-top: 2rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .masterpage-section {
+    margin-top: 75px;
+  }
+  .master-back-bg .img-inner {
+    height: 180px;
+  }
+  .contact-us-section {
+    grid-template-columns: 100%;
+    .grid-contact {
+      padding: 0 0 10px 0;
+    }
+    .grid-form {
+      padding: 10px 0 0 0;
+    }
+  }
+}
+@media (max-width: 575px) {
+  .masterpage-section {
+    margin-top: 60px;
+  }
+  .master-back-bg .img-inner {
+    height: 150px;
+  }
+  .contact-us-section {
+    .buttons-group {
+      .btn {
+        width: 100%;
+      }
+    }
+  }
+}
+
+/*#endregion -------------- MasterPage */

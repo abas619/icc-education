@@ -1,0 +1,179 @@
+/*#region ----------------- Mobile Bottom Navbar */
+.mobile-bottom-navbar {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  background-color: white;
+  z-index: 888;
+  display: none;
+  box-shadow: 0 -3px 15px rgba($color: $textDark, $alpha: 0.1);
+  .navbar-inner {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    align-items: flex-start;
+    padding: 0 0 5px 0;
+  }
+  .item {
+    text-align: center;
+    a {
+      display: inline-block;
+      background-color: transparent;
+      min-width: 70px;
+      padding: 10px 5px 5px 5px;
+      border-radius: 0;
+      position: relative;
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 7px;
+        background-color: transparent;
+        border-radius: 0;
+      }
+    }
+    .icon {
+      color: $textGrey;
+      height: 24px;
+      .fi {
+        font-size: 18px;
+        line-height: 0;
+      }
+    }
+    h6 {
+      font-size: 12px;
+      font-weight: 600;
+      color: $textDark;
+      margin-bottom: 0;
+      @include textTruncate(1);
+    }
+    &.active {
+      a {
+        background-color: $primary;
+        &::before {
+          background-color: $primary;
+        }
+        &:hover {
+          background-color: $primary;
+          &::before {
+            background-color: $primary;
+          }
+          .icon,
+          h6 {
+            color: white;
+          }
+        }
+      }
+      .icon,
+      h6 {
+        color: white;
+      }
+    }
+    a {
+      &:hover {
+        .icon,
+        h6 {
+          color: $primary;
+        }
+      }
+    }
+  }
+}
+
+.mobile-payment-navbar {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  background-color: white;
+  z-index: 889;
+  display: none;
+  box-shadow: 0 -3px 15px rgba($color: $textDark, $alpha: 0.1);
+  .nav-inner {
+    @include displayFlex(flex, center, space-between);
+    padding: 8px 30px;
+  }
+  .price-content {
+    @include displayFlex(flex, center, center);
+    flex-direction: column;
+    .real {
+      font-size: 18px;
+      font-weight: 800;
+      color: $textDark;
+    }
+    .toman {
+      font-size: 14px;
+      font-weight: 500;
+      color: $textGrey;
+      margin-right: 10px;
+    }
+    .discount {
+      font-size: 16px;
+      font-weight: 500;
+      text-decoration: line-through;
+      color: $textSilver;
+    }
+    .badge-off {
+      background-color: red;
+      display: inline-block;
+      color: white;
+      font-size: 14px;
+      font-weight: 600;
+      padding: 3px 8px 1px 8px;
+      border-radius: 30px;
+      margin-right: 15px;
+    }
+    .btn-primary {
+      width: 100%;
+      margin-top: 1.2rem;
+    }
+  }
+  .pay {
+    .btn-primary {
+      min-width: 300px;
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .mobile-payment-navbar {
+    display: block;
+  }
+}
+@media (max-width: 768px) {
+  .mobile-bottom-navbar {
+    display: block;
+  }
+}
+@media (max-width: 575px) {
+  .mobile-payment-navbar {
+    .pay {
+      padding-left: 40px;
+      width: 60%;
+      flex: 0 0 60%;
+      .btn-primary {
+        min-width: 100%;
+      }
+    }
+  }
+}
+@media (max-width: 400px) {
+  .mobile-bottom-navbar {
+    .container {
+      padding: 0;
+    }
+    .item {
+      a {
+        min-width: 60px;
+      }
+      .icon {
+        .mdi {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+}
+/*#endregion -------------- Mobile Bottom Navbar */

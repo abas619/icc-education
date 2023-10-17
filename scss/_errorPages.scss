@@ -1,0 +1,110 @@
+/*#region ----------------- Error Pages */
+:root {
+  --s: 34px; /* control the size (the circle diameter) */
+  --c1: #edf6fd;
+  --c2: white;
+  --_g: radial-gradient(calc(var(--s) / 2), var(--c1) 97%, #0000);
+}
+
+.error-section {
+  margin: 240px 0 120px 0;
+  .error-inner {
+    background-color: white;
+    width: 700px;
+    border-radius: 0;
+    margin: 0 auto;
+    text-align: center;
+    padding: 0 3rem 3rem 3rem;
+    position: relative;
+    z-index: 10;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 0;
+      // opacity: 0.7;
+      z-index: -1;
+      background: var(--_g), var(--_g) calc(2 * var(--s)) calc(2 * var(--s)),
+        repeating-conic-gradient(from 45deg, #0000 0 25%, var(--c2) 0 50%)
+          calc(-0.707 * var(--s)) calc(-0.707 * var(--s)),
+        repeating-linear-gradient(
+          135deg,
+          var(--c1) calc(var(--s) / -2) calc(var(--s) / 2),
+          var(--c2) 0 calc(2.328 * var(--s))
+        );
+      background-size: calc(4 * var(--s)) calc(4 * var(--s));
+    }
+  }
+  .number {
+    font-size: 120px;
+    font-weight: 800;
+    line-height: normal;
+    text-shadow: -8px 0 white, 0 8px white, 8px 0 white, 0 -8px white;
+    position: relative;
+    top: -70px;
+    color: $textGrey;
+  }
+  h2 {
+    position: relative;
+    top: -50px;
+    font-size: 22px;
+    font-weight: 600;
+    color: $textDark;
+  }
+  p {
+    position: relative;
+    top: -30px;
+    font-size: 16px;
+    color: $textGrey;
+  }
+}
+
+@media (max-width: 992px) {
+  .error-section {
+    margin-top: 210px;
+    .number {
+      font-size: 110px;
+      top: -65px;
+    }
+  }
+}
+@media (max-width: 768px) {
+  .error-section {
+    .error-inner {
+      width: 100%;
+      padding: 0 2rem 2rem 2rem;
+    }
+    .number {
+      font-size: 100px;
+      top: -60px;
+    }
+    h2 {
+      font-size: 18px;
+    }
+    p {
+      font-size: 14px;
+    }
+  }
+}
+@media (max-width: 575px) {
+  .error-section {
+    margin-top: 180px;
+    .error-inner {
+      padding: 0 1.5rem 1.5rem 1.5rem;
+    }
+    .number {
+      font-size: 90px;
+      top: -55px;
+    }
+    h2 {
+      font-size: 16px;
+    }
+    p {
+      font-size: 12px;
+    }
+  }
+}
+/*#endregion -------------- Error Pages */

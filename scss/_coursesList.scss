@@ -200,8 +200,8 @@
       border-radius: 0;
       padding: 8px;
       font-size: 12px;
-      font-weight: 400;
-      color: $textGrey;
+      font-weight: 500;
+      color: $textDark;
       cursor: pointer;
       .fi {
         margin-left: 5px;
@@ -209,6 +209,10 @@
         line-height: 0;
         position: relative;
         top: 2px;
+      }
+      span {
+        font-weight: 600;
+        margin-right: 5px;
       }
       &:hover {
         border-color: $primary;
@@ -268,6 +272,11 @@
     font-size: 18px;
     font-weight: 800;
   }
+}
+
+.list-title {
+  font-weight: 600;
+  margin-bottom: 20px;
 }
 
 .side-box {
@@ -782,6 +791,8 @@
         }
       }
       .card-teacher {
+        flex: 0 0 100%;
+        width: 100%;
         .card-inner {
           padding: 8px !important;
         }

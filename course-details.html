@@ -84,9 +84,16 @@
                     </ul>
                 </div>
                 <div class="nav-action">
+                    <!-- Basket -->
+                    <div class="nav-basket">
+                        <button class="btn-nav-button">
+                            <i class="fi fi-rr-shopping-bag"></i>
+                            <span class="badge">3</span>
+                        </button>
+                    </div>
                     <!-- Search -->
                     <div class="nav-search">
-                        <button class="btn-nav-search" onclick="showDesktopSearch()"><i
+                        <button class="btn-nav-button" onclick="showDesktopSearch()"><i
                                 class="fi fi-rr-search"></i></button>
                     </div>
                     <!-- قبل لاگین -->
@@ -107,7 +114,8 @@
                                 <li><a href="#"><i class="fi fi-rr-bookmark"></i>لیست‌ها</a></li>
                                 <li><a href="#"><i class="fi fi-rr-play-alt"></i>دوره‌ها</a></li>
                                 <hr>
-                                <li><a href="#"><i class="fi fi-rr-sign-out-alt"></i>خروج از حساب</a></li>
+                                <li><a href="#" data-bs-toggle="modal" data-bs-target="#modal-logout"><i class="fi fi-rr-sign-out-alt"></i>خروج از
+                                        حساب</a></li>
                             </ul>
                         </div>
                     </div> -->
@@ -409,6 +417,23 @@
             </div>
         </div>
     </div>
+
+    <!-- Mobile Payment navbar -->
+    <div class="mobile-payment-navbar">
+        <div class="nav-inner">
+            <div class="pay">
+                <button type="button" class="btn btn-primary">خرید دوره</button>
+            </div>
+            <div class="price-content">
+                <div class="discount">
+                    69,000
+                    <span class="badge-off">%20</span>
+                </div>
+                <div class="real">54,000<span class="toman">تومان</span></div>
+            </div>
+        </div>
+    </div>
+
 
     <!-- Footer -->
     <footer class="footer">
