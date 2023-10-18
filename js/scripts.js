@@ -82,6 +82,19 @@ function addActiveClass(el) {
   el.classList.toggle("active");
 }
 
+function showUserProfileSideMenu() {
+  const userMenu = document.querySelector(".grid-user-menu");
+  const overlayUserMenu = document.querySelector(".overlay-userMenu");
+  userMenu.classList.add("active");
+  overlayUserMenu.classList.add("active");
+}
+function hideUserProfileSideMenu() {
+  const userMenu = document.querySelector(".grid-user-menu");
+  const overlayUserMenu = document.querySelector(".overlay-userMenu");
+  userMenu.classList.remove("active");
+  overlayUserMenu.classList.remove("active");
+}
+
 // Show Filter on Mobile
 // if (document.getElementById("products-section") !== null) {
 //   var productsSection = document.getElementById("products-section");

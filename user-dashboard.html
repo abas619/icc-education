@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="fa" class="no-js" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#007ddf" />
+    <meta name="msapplication-navbutton-color" content="#007ddf">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#007ddf">
+    <title>آموزشگاه ICC | پروفایل کاربر</title>
+    <link href="css/bootstrap.rtl.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="scss/main.css">
+    <link rel="stylesheet" href="plugins/noUIslider/nouislider.css">
+
+    <!-- Font Icons -->
+    <link href="css/all.rounded.css" rel="stylesheet" type="text/css" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="images/small-icon.png" />
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="images/logo-72x72.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="images/logo-114x114.png" />
+
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="myNavbar">
+        <div class="container-lg">
+            <div class="header-inner">
+                <div class="mobile-links">
+                    <button type="button" class="btn-mobile-menu"><i class="fi fi-rr-menu-burger"></i></button>
+                    <!-- Sidebar Menu -->
+                    <div id="sidebar-menu">
+                        <div class="sidebar-header">
+                            <div class="sidebar-logo">
+                                <a href="index.html">
+                                    <img src="images/logo.svg" class="sidebarlogo" alt="logo">
+                                </a>
+                            </div>
+                            <div class="sidebar-close">
+                                <button class="btn-close-menu"><i class="fi fi-rr-cross"></i></button>
+                            </div>
+                        </div>
+                        <ul class="category-list">
+                            <li class="item"><a href="#">کمیسیون‌ها</a></li>
+                            <li class="item"><a href="#">آموزش</a></li>
+                            <li class="item"><a href="#">انتشارات</a></li>
+                            <li class="item"><a href="#">درباره ما</a></li>
+                            <li class="item"><a href="#">تماس با ما</a></li>
+                        </ul>
+                        <div class="socials-icon">
+                            <ul>
+                                <li><a href="#"><i class="fi fi-brands-telegram"></i></a></li>
+                                <li><a href="#"><i class="fi fi-brands-instagram"></i></a></li>
+                                <li><a href="#"><i class="fi fi-brands-linkedin"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="overlay-back"></div>
+                </div>
+                <div class="nav-logo">
+                    <a href="index.html">
+                        <img src="images/logo.svg" alt="logo">
+                    </a>
+                </div>
+                <div class="nav-menus">
+                    <ul class="menu-list">
+                        <li class="link"><a href="#">کمیسیون‌ها</a></li>
+                        <li class="link"><a href="#">آموزش</a></li>
+                        <li class="link have-child">
+                            <a href="#">انتشارات</a>
+                            <ul>
+                                <li><a href="#">مقالات</a></li>
+                                <li><a href="#">بولتن خبری</a></li>
+                                <li><a href="#">مقالات و دستورالعمل های ICC</a></li>
+                            </ul>
+                        </li>
+                        <li class="link"><a href="#">درباره ما</a></li>
+                        <li class="link"><a href="#">تماس با ما</a></li>
+                    </ul>
+                </div>
+                <div class="nav-action">
+                    <!-- Basket -->
+                    <div class="nav-basket">
+                        <button class="btn-nav-button">
+                            <i class="fi fi-rr-shopping-bag"></i>
+                            <span class="badge">3</span>
+                        </button>
+                    </div>
+                    <!-- Search -->
+                    <div class="nav-search">
+                        <button class="btn-nav-button" onclick="showDesktopSearch()"><i
+                                class="fi fi-rr-search"></i></button>
+                    </div>
+                    <!-- قبل لاگین -->
+                    <!-- <button class="btn btn-primary icon-right">
+                        <span class="icon"><i class="fi fi-rr-user-add"></i></span>
+                        <span class="text">ورود/ثبت‌ نام</span>
+                    </button> -->
+
+                    <!-- وقتی لاگین کرد -->
+                    <div class="nav-login">
+                        <button class="btn btn-primary-outline icon-right text-truncate">
+                            <span class="icon"><i class="fi fi-rr-user"></i></span>
+                            <span class="text">وحید حسینی</span>
+                        </button>
+                        <div class="user-menu">
+                            <ul>
+                                <li><a href="#"><i class="fi fi-rr-user"></i>پروفایل من</a></li>
+                                <li><a href="#"><i class="fi fi-rr-bookmark"></i>لیست‌ها</a></li>
+                                <li><a href="#"><i class="fi fi-rr-play-alt"></i>دوره‌ها</a></li>
+                                <hr>
+                                <li><a href="#" data-bs-toggle="modal" data-bs-target="#modal-logout"><i
+                                            class="fi fi-rr-sign-out-alt"></i>خروج از
+                                        حساب</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Desktop Search -->
+    <div id="desktop-search-content" class="">
+        <button type="button" class="btn-arrow-back" onclick="hideDesktopSearch()">
+            <i class="fi fi-rr-cross"></i>
+        </button>
+        <div class="search-inner">
+            <div class="search-input">
+                <input type="text" class="desktop-search-input" placeholder="جستجو..." onkeyup="changeValue(this)">
+                <button type="button" class="btn-clear" onclick="clearInputValue(this)"><i
+                        class="fi fi-rr-trash"></i></button>
+                <button type="button" class="btn-search-result">جستجو</button>
+            </div>
+            <div class="list-result">
+                <ul class="tags">
+                    <li><a href="#">کسب‌و کار آنلاین</a></li>
+                    <li><a href="#">مدیریت زمان</a></li>
+                    <li><a href="#">کوچینگ</a></li>
+                    <li><a href="#">ثروتمند شوید</a></li>
+                    <li><a href="#">نجات از رکود</a></li>
+                    <li><a href="#">مدیریت</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="user-dashboard-section">
+        <div class="container-lg">
+            <div class="grid-layout">
+                <div class="grid-user-menu">
+                    <div class="grid-inner">
+                        <!-- close Userprofile -->
+                        <button type="button" class="btn-closeprofileMenu" onclick="hideUserProfileSideMenu()"><i
+                                class="fi fi-rr-cross"></i></button>
+                        <!-- User Image -->
+                        <div class="user-image">
+                            <div class="img-inner">
+                                <img src="images/thumb-120x120.png" alt="user-name">
+                            </div>
+                            <div class="user-name">
+                                <h5>شیده صفری</h5>
+                                <a href="user-information.html" type="button" class="btn-opernImage"><i
+                                        class="fi fi-rr-pencil"></i>ویرایش پروفایل</a>
+                            </div>
+                        </div>
+                        <!-- User Menu -->
+                        <div class="user-menu">
+                            <ul class="menu-list">
+                                <li class="menu-item active"><a href="user-profile.html" class="btn-collape"><i
+                                            class="fi fi-rr-apps"></i>داشبورد</a></li>
+                                <li class="menu-item"><a href="user-information.html" class="btn-collape"><i
+                                            class="fi fi-rr-user"></i>اطلاعات کاربری</a></li>
+                                <li class="menu-item"><a href="user-courses.html" class="btn-collape"><i
+                                            class="fi fi-rr-computer"></i>دوره‌های
+                                        من</a></li>
+                                <li class="menu-item"><a href="user-bookmarks.html" class="btn-collape"><i
+                                            class="fi fi-rr-bookmark"></i>لیست‌
+                                        من</a></li>
+                                <li class="menu-item">
+                                    <a href="user-tickets.html" class="btn-collape">
+                                        <i class="fi fi-rr-comment-alt"></i>
+                                        پیام‌های دریافتی
+                                        <span
+                                            class="position-absolute top-50 end-0 translate-middle badge rounded-pill bg-danger">
+                                            2+
+                                        </span>
+                                    </a>
+                                </li>
+                                <li class="menu-item"><a href="user-password.html" class="btn-collape"><i
+                                            class="fi fi-rr-lock"></i>تغییر رمز عبور</a></li>
+                                <li class="menu-item"><a href="user-transactions.html" class="btn-collape"><i
+                                            class="fi fi-rr-receipt"></i>تراکنش‌ها</a></li>
+                                <li class="menu-item">
+                                    <a href="#" class="btn-collape" data-bs-toggle="modal"
+                                        data-bs-target="#modal-logout">
+                                        <i class="fi fi-rr-sign-out-alt"></i>
+                                        خروج از حساب کاربری
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="overlay-userMenu" onclick="hideUserProfileSideMenu()"></div>
+                </div>
+                <div class="grid-main">
+                    <div class="grid-inner">
+                        <div class="main-title">
+                            <div class="title-inner">
+                                <button type="button" class="btn-usermenu" onclick="showUserProfileSideMenu()"><i
+                                        class="fi fi-rr-menu-dots-vertical"></i></button>
+                                <div class="icon">
+                                    <i class="fi fi-rr-apps"></i>
+                                </div>
+                                <h3>داشبورد</h3>
+                            </div>
+                        </div>
+                        <div class="main-body">
+
+                            <div class="profile-status">
+                                <div class="status-inner">
+                                    <div class="card-status color-1">
+                                        <div class="card-inner">
+                                            <h2><i class="fi fi-rr-play-alt"></i>دوره‌های من</h2>
+                                            <div class="number">3<span>دوره</span></div>
+                                        </div>
+                                    </div>
+                                    <div class="card-status color-2">
+                                        <div class="card-inner">
+                                            <h2><i class="fi fi-rr-list-check"></i>لیست‌ من</h2>
+                                            <div class="number">7<span>دوره</span></div>
+                                        </div>
+                                    </div>
+                                    <div class="card-status color-3">
+                                        <div class="card-inner">
+                                            <h2><i class="fi fi-rr-clock"></i>زمان مشاهده دوره</h2>
+                                            <div class="number">1661<span>دقیقه</span></div>
+                                        </div>
+                                    </div>
+                                    <div class="card-status color-4">
+                                        <div class="card-inner">
+                                            <h2><i class="fi fi-rr-credit-card"></i>کیف پول</h2>
+                                            <div class="number">620,000<span>تومان</span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Last Courses -->
+                            <div class="products-list">
+                                <div class="list-title">
+                                    <h2><i class="fi fi-rr-computer"></i>آخرین دوره‌های من</h2>
+                                    <a href="user-courses.html" class="btn-link">مشاهده همه<i
+                                            class="fi fi-rr-angle-small-left"></i></a>
+                                </div>
+                                <div class="list-inner">
+                                    <div class="card-course">
+                                        <a href="#" class="card-inner">
+                                            <div class="img-container">
+                                                <div class="img-inner">
+                                                    <img src="images/thumb-520x465.png" alt="image-name">
+                                                </div>
+                                            </div>
+                                            <div class="info">
+                                                <h3 class="name">کتاب صوتی | کواکتیوکوچینگ</h3>
+                                                <h4 class="author">هنری کیمسی</h4>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="card-course">
+                                        <a href="#" class="card-inner">
+                                            <div class="img-container">
+                                                <div class="img-inner">
+                                                    <img src="images/thumb-520x465.png" alt="image-name">
+                                                </div>
+                                            </div>
+                                            <div class="info">
+                                                <h3 class="name">کتاب صوتی | کواکتیوکوچینگ</h3>
+                                                <h4 class="author">هنری کیمسی</h4>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="card-course">
+                                        <a href="#" class="card-inner">
+                                            <div class="img-container">
+                                                <div class="img-inner">
+                                                    <img src="images/thumb-520x465.png" alt="image-name">
+                                                </div>
+                                            </div>
+                                            <div class="info">
+                                                <h3 class="name">کتاب صوتی | کواکتیوکوچینگ</h3>
+                                                <h4 class="author">هنری کیمسی</h4>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="card-course">
+                                        <a href="#" class="card-inner">
+                                            <div class="img-container">
+                                                <div class="img-inner">
+                                                    <img src="images/thumb-520x465.png" alt="image-name">
+                                                </div>
+                                            </div>
+                                            <div class="info">
+                                                <h3 class="name">کتاب صوتی | کواکتیوکوچینگ</h3>
+                                                <h4 class="author">هنری کیمسی</h4>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-inner">
+                <div class="row">
+                    <div class="col-lg-4 col-md-12">
+                        <div class="information">
+                            <div class="logo">
+                                <a href="index.html">
+                                    <img src="images/logo-white.svg" alt="logo">
+                                </a>
+                            </div>
+                            <div class="description">
+                                <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان
+                                    گرافیک است چاپگرها و متون بلکه روزنامه
+                                    و مجله در ستون و سطرآنچنان که لازم است</p>
+                            </div>
+                            <div class="e-sign">
+                                <ul>
+                                    <li>
+                                        <a href="#"><img src="https://via.placeholder.com/300x300/ccc.png" alt=""></a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><img src="https://via.placeholder.com/300x300/ccc.png" alt=""></a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><img src="https://via.placeholder.com/300x300/ccc.png" alt=""></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-5 col-md-6">
+                        <div class="links">
+                            <h5 class="footer-title">دسترسی سریع</h5>
+                            <ul>
+                                <li><a href="#">صفحه‌ اصلی</a></li>
+                                <li><a href="#">خدمات مشورتی</a></li>
+                                <li><a href="#">مقالات و دستورالعمل‌ها</a></li>
+                                <li><a href="#">انتشارات</a></li>
+                                <li><a href="#">اخبار</a></li>
+                                <li><a href="#">درباره ما</a></li>
+                                <li><a href="#">آموزش</a></li>
+                                <li><a href="#">شرایط عضویت</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="socials-information">
+                            <h5 class="footer-title">ارتباط با ما</h5>
+                            <ul class="icons-list">
+                                <li><a href="#"><i class="fi fi-brands-linkedin"></i></a></li>
+                                <li><a href="#"><i class="fi fi-brands-telegram"></i></a></li>
+                                <li><a href="#"><i class="fi fi-brands-instagram"></i></a></li>
+                            </ul>
+                            <div class="call-content">
+                                <ul>
+                                    <li>
+                                        شماره تماس :
+                                        <div class="desc">
+                                            <a href="tel:0215648893">021-5648893</a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        آدرس :
+                                        <div class="desc">تهران ملاصدرا، نبش کوچه</div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <span>تمامی حقوق متعلق به کمیته ایرانی اتاق بازرگانی بین المللی است. طراحی و اجرا توسط <a
+                        href="#">آی‌تی‌سان</a></span>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Scripts -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="plugins/swiperjs/swiper-initial.js"></script>
+    <script src="js/scripts.js"></script>
+    <script src="plugins/noUIslider/nouislider.min.js"></script>
+    <script src="plugins/noUIslider/nouislider.initial.js"></script>
+
+</body>
+
+</html>

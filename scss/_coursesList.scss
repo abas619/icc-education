@@ -97,6 +97,109 @@
   }
 }
 
+.card-course-row {
+  margin-bottom: 20px;
+  .card-inner {
+    background-color: $background;
+    padding: 10px;
+    border-radius: 0;
+    position: relative;
+    margin-bottom: 1rem;
+    border: 1px solid $borderColor;
+  }
+  .card-body {
+    display: grid;
+    grid-template-columns: 140px auto;
+    padding: 0 0 15px 0;
+  }
+  .image {
+    width: 100%;
+    height: 95px;
+    position: relative;
+    .avatar {
+      width: 100%;
+      height: 100%;
+      border-radius: 0;
+      object-fit: cover;
+      position: relative;
+      z-index: 20;
+    }
+  }
+  .info {
+    padding-right: 20px;
+    .name {
+      font-size: 14px;
+      font-weight: 500;
+      color: $textDark;
+      @include textTruncate(1);
+    }
+    ul {
+      @include displayFlex(flex, center, flex-start);
+      flex-wrap: wrap;
+      li {
+        flex: 0 0 50%;
+        width: 50%;
+        margin-top: 8px;
+      }
+      .icon {
+        .fi {
+          font-size: 16px;
+          line-height: 0;
+          display: inline-block;
+          position: relative;
+          top: 4px;
+          color: $textSilver;
+        }
+      }
+      .text {
+        font-size: 13px;
+        font-weight: 400;
+        margin-right: 5px;
+        color: $textDark;
+        padding: 2px 5px;
+        border-radius: 3px;
+        &.bg-success {
+          background-color: $success !important;
+          color: white;
+        }
+        &.bg-error {
+          background-color: $error !important;
+          color: white;
+        }
+        &.bg-primary {
+          background-color: $primary !important;
+          color: white;
+        }
+      }
+    }
+  }
+  .c-footer {
+    @include displayFlex(flex, center, space-between);
+    border-top: 1px solid $borderColor;
+    padding-top: 15px;
+    .date {
+      h6 {
+        font-size: 13px;
+        font-weight: 400;
+        color: $textDark;
+        margin-bottom: 0;
+        span {
+          color: $textGrey;
+        }
+      }
+    }
+    .btn {
+      padding: 0.5rem 0.8rem;
+      font-size: 13px;
+      min-width: unset;
+      &:hover {
+        background-color: $primary;
+        color: white;
+      }
+    }
+  }
+}
+
 .swiper-courses {
   position: unset !important;
   .swiper-wrapper {
@@ -570,12 +673,6 @@
     }
   }
 }
-// .main-title {
-//   color: $textDark;
-//   font-size: 22px;
-//   font-weight: 800;
-//   margin-top: 50px;
-// }
 
 .side-overlay {
   position: fixed;
@@ -590,7 +687,6 @@
     display: block;
   }
 }
-
 .sort-radio-group {
   .form-check {
     margin-bottom: 10px;
@@ -751,6 +847,37 @@
   }
 }
 @media (max-width: 575px) {
+  .card-course-row {
+    .info {
+      .name {
+        font-size: 13px;
+        margin-bottom: 8px;
+      }
+      ul {
+        li {
+          flex: 0 0 100%;
+          width: 100%;
+          margin-top: 3px;
+        }
+      }
+    }
+    .c-footer {
+      flex-direction: column;
+      .date,
+      .button-group {
+        flex: 0 0 100%;
+        width: 100%;
+        text-align: center;
+      }
+      .button-group {
+        .btn {
+          width: 100%;
+          margin-top: 10px;
+        }
+      }
+    }
+  }
+
   .swiper-courses {
     .swiper-button-next {
       left: 0;
@@ -773,13 +900,19 @@
       }
     }
   }
-  // .main-title {
-  //   font-size: 18px;
-  //   text-align: center;
-  //   margin-bottom: 1.5rem;
-  // }
 }
 @media (max-width: 450px) {
+  .card-course-row {
+    .card-body {
+      grid-template-columns: 100%;
+    }
+    .image {
+      height: 150px;
+    }
+    .info {
+      padding: 10px 0 0 0;
+    }
+  }
   #products-section {
     .list-container .myrow .products-main {
       padding-right: 5px;
