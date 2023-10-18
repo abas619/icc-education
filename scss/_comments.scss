@@ -4,7 +4,6 @@
   padding: 1.5rem;
   margin-top: 2rem;
   background-color: white;
-  border: 1px solid $borderColor;
   .comments-title {
     @include displayFlex(flex, center, space-between);
     margin-bottom: 2.5rem;
@@ -13,21 +12,21 @@
       font-size: 18px;
       font-weight: 600;
       color: $textDark;
+      .fi {
+        margin-left: 15px;
+        position: relative;
+        top: 4px;
+        font-size: 22px;
+        color: $textGrey;
+      }
     }
     span {
       font-size: 14px;
       color: $textSilver;
       margin-right: 5px;
     }
-    .fi {
-      margin-left: 15px;
-      position: relative;
-      top: 4px;
-      font-size: 22px;
-      color: $textGrey;
-    }
     .btn-primary {
-      padding: 0.6rem 1.2rem;
+      min-width: unset;
       .fi {
         color: white;
       }
@@ -66,6 +65,7 @@
             }
             &.date {
               font-size: 13px;
+              font-weight: 400;
               color: $textGrey;
             }
           }
@@ -121,6 +121,20 @@
             padding-bottom: 30px;
           }
         }
+      }
+    }
+    &.bg-grey {
+      background-color: $background;
+      padding: 20px;
+      margin-top: 20px;
+      .comment-wrap {
+        border-bottom: none;
+        padding: 0;
+      }
+      .child-comment {
+        padding: 15px;
+        margin: 0;
+        background-color: rgba($color: $primary, $alpha: 0.1);
       }
     }
   }
@@ -338,6 +352,11 @@
       }
       .child-comment {
         margin: 20px 20px 5px 0;
+      }
+      &.bg-grey {
+        .child-comment {
+          margin: 0;
+        }
       }
     }
   }
