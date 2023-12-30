@@ -158,33 +158,57 @@
                     <div class="products-side">
                         <button class="btn-close-sidebar" onclick="hiddenOverlay()"><i
                                 class="fi fi-rr-cross"></i></button>
-                        <div class="side-inner">
+                        <form action="" class="side-inner">
+                            <div class="side-box filters">
+                                <div class="box-header">
+                                    <h2>فیلترهای اعمال شده</h2>
+                                    <button type="button" class="btn-clean-filter">پاک کردن همه</button>
+                                </div>
+                                <div class="box-body">
+                                    <h3 class="title">دسته بندی</h3>
+                                    <div class="filter-choosen">
+                                        <div class="link">سامسونگ<button><i class="fi fi-rr-cross"></i></button></div>
+                                        <div class="link">شیائومی<button><i class="fi fi-rr-cross"></i></button></div>
+                                        <div class="link">هواوی<button><i class="fi fi-rr-cross"></i></button></div>
+                                    </div>
+                                    <h3 class="title">بازه قیمت</h3>
+                                    <div class="filter-choosen">
+                                        <div class="link">
+                                            <span class="from">از</span>
+                                            <span class="price">13,500</span>
+                                            <span class="to">تا</span>
+                                            <span class="price">980,000</span>
+                                            <button><i class="fi fi-rr-cross"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                             <div class="side-box side-category">
                                 <div class="box-header">
-                                    <h2>دسته بندی ها</h2>
+                                    <h2>دسته بندی‌ها</h2>
                                 </div>
                                 <div class="box-body side-body-cetegory">
-                                    <ul class="list-category">
-                                        <li>
-                                            <ul class="sub-list-category">
-                                                <li><a href="#" class="sub-item">کامپیوتر و تجهیزات جانبی</a>
-                                                </li>
-                                                <li><a href="#" class="sub-item">اسپیکر</a></li>
-                                                <li><a href="#" class="sub-item">تجهیزات شبکه</a></li>
-                                                <li><a href="#" class="sub-item active">کامپیوترهای All-in-One</a></li>
-                                                <li><a href="#" class="sub-item">کیس های اسمبل شده</a></li>
-                                                <li><a href="#" class="sub-item">قطعات کامپیوتر</a></li>
-                                                <li><a href="#" class="sub-item">نمایشگر</a></li>
-                                                <li><a href="#" class="sub-item">ماوس</a></li>
-                                                <li><a href="#" class="sub-item">ماوس پد</a></li>
-                                                <li><a href="#" class="sub-item">وب کم</a></li>
-                                                <li><a href="#" class="sub-item">USB هاب</a></li>
-                                                <li><a href="#" class="sub-item">قلم نوری</a></li>
-                                                <li><a href="#" class="sub-item">کارت خوان</a></li>
-                                                <li><a href="#" class="sub-item">لوازم جانبی</a></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
+                                    <div class="list-category">
+                                        <div class="sub-list-category">
+                                            <div class="sub-item">کامپیوتر و تجهیزات جانبی
+                                            </div>
+                                            <div class="sub-item">اسپیکر</div>
+                                            <div class="sub-item">تجهیزات شبکه</div>
+                                            <div class="sub-item active">کامپیوترهای
+                                                All-in-One</div>
+                                            <div class="sub-item">کیس های اسمبل شده
+                                            </div>
+                                            <div class="sub-item">قطعات کامپیوتر</div>
+                                            <div class="sub-item">نمایشگر</div>
+                                            <div class="sub-item">ماوس</div>
+                                            <div class="sub-item">ماوس پد</div>
+                                            <div class="sub-item">وب کم</div>
+                                            <div class="sub-item">USB هاب</div>
+                                            <div class="sub-item">قلم نوری</div>
+                                            <div class="sub-item">کارت خوان</div>
+                                            <div class="sub-item">لوازم جانبی</div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="side-box side-collapse">
@@ -285,7 +309,7 @@
                                             class="fi fi-rr-filter"></i>اعمال فیلتر</button>
                                 </div>
                             </div>
-                        </div>
+                        </form>
                     </div>
                     <div class="products-main">
                         <div class="main-inner">
@@ -294,13 +318,13 @@
                             </div>
                             <div class="sort-content">
                                 <h2 class="sort-title"><i class="fi fi-rr-settings-sliders"></i>مرتب سازی براساس :</h2>
-                                <ul>
-                                    <li class="active"><a href="#">پربازدیدترین</a></li>
-                                    <li><a href="#">پرفروشترین</a></li>
-                                    <li><a href="#">جدیدترین</a></li>
-                                    <li><a href="#">ارزان‌ترین</a></li>
-                                    <li><a href="#">گران‌ترین</a></li>
-                                </ul>
+                                <div class="sort-li">
+                                    <button class="active">پربازدیدترین</button>
+                                    <button>پرفروشترین</button>
+                                    <button>جدیدترین</button>
+                                    <button>ارزان‌ترین</button>
+                                    <button>گران‌ترین</button>
+                                </div>
                                 <button type="button" class="btn-advanced-search" onclick="showSideFilter()"><i
                                         class="fi fi-rr-settings-sliders"></i>جستجوی
                                     پیشرفته</button>
@@ -313,18 +337,36 @@
                                     <a href="#" class="card-inner">
                                         <div class="img-container">
                                             <div class="img-inner">
-                                                <img src="https://via.placeholder.com/520x465/ccc.png" alt="image-name">
+                                                <img src="https://via.placeholder.com/600x450/ccc.png" alt="image-name">
                                             </div>
                                         </div>
                                         <div class="info">
                                             <h3 class="name">کتاب صوتی | کواکتیوکوچینگ</h3>
                                             <h4 class="author">هنری کیمسی</h4>
                                             <div class="price">
-                                                <div class="real">
+                                                <div class="price-inner">
                                                     <div class="discount">180,000</div>
-                                                    <h6>150,000</h6>
+                                                    <h6>150,000 <span class="toman">تومان</span></h6>
                                                 </div>
-                                                <span class="toman">تومان</span>
+                                            </div>
+                                        </div>
+                                        <div class="percentage">10%</div>
+                                    </a>
+                                </div>
+                                <div class="card-course">
+                                    <a href="#" class="card-inner">
+                                        <div class="img-container">
+                                            <div class="img-inner">
+                                                <img src="https://via.placeholder.com/600x450/ccc.png" alt="image-name">
+                                            </div>
+                                        </div>
+                                        <div class="info">
+                                            <h3 class="name">کتاب صوتی | کواکتیوکوچینگ</h3>
+                                            <h4 class="author">هنری کیمسی</h4>
+                                            <div class="price">
+                                                <div class="price-inner">
+                                                    <h6>رایگان</h6>
+                                                </div>
                                             </div>
                                         </div>
                                     </a>
@@ -333,86 +375,16 @@
                                     <a href="#" class="card-inner">
                                         <div class="img-container">
                                             <div class="img-inner">
-                                                <img src="https://via.placeholder.com/520x465/ccc.png" alt="image-name">
+                                                <img src="https://via.placeholder.com/600x450/ccc.png" alt="image-name">
                                             </div>
                                         </div>
                                         <div class="info">
                                             <h3 class="name">کتاب صوتی | کواکتیوکوچینگ</h3>
                                             <h4 class="author">هنری کیمسی</h4>
                                             <div class="price">
-                                                <div class="real">
-                                                    <div class="discount">180,000</div>
-                                                    <h6>150,000</h6>
+                                                <div class="price-inner">
+                                                    <h6>450,000 <span class="toman">تومان</span></h6>
                                                 </div>
-                                                <span class="toman">تومان</span>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="card-course">
-                                    <a href="product-details.html" class="card-inner">
-                                        <div class="img-container">
-                                            <div class="img-inner">
-                                                <img src="https://via.placeholder.com/520x465/ccc.png" alt="image-name">
-                                            </div>
-                                        </div>
-                                        <div class="info">
-                                            <h3 class="name">کتاب صوتی | کواکتیوکوچینگ</h3>
-                                            <h4 class="author">هنری کیمسی</h4>
-                                            <div class="price">
-                                                <div class="real">150,000</div>
-                                                <span class="toman">تومان</span>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="card-course">
-                                    <a href="product-details.html" class="card-inner">
-                                        <div class="img-container">
-                                            <div class="img-inner">
-                                                <img src="https://via.placeholder.com/520x465/ccc.png" alt="image-name">
-                                            </div>
-                                        </div>
-                                        <div class="info">
-                                            <h3 class="name">کتاب صوتی | کواکتیوکوچینگ</h3>
-                                            <h4 class="author">هنری کیمسی</h4>
-                                            <div class="price">
-                                                <div class="real">150,000</div>
-                                                <span class="toman">تومان</span>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="card-course">
-                                    <a href="product-details.html" class="card-inner">
-                                        <div class="img-container">
-                                            <div class="img-inner">
-                                                <img src="https://via.placeholder.com/520x465/ccc.png" alt="image-name">
-                                            </div>
-                                        </div>
-                                        <div class="info">
-                                            <h3 class="name">کتاب صوتی | کواکتیوکوچینگ</h3>
-                                            <h4 class="author">هنری کیمسی</h4>
-                                            <div class="price">
-                                                <div class="real">150,000</div>
-                                                <span class="toman">تومان</span>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="card-course">
-                                    <a href="product-details.html" class="card-inner">
-                                        <div class="img-container">
-                                            <div class="img-inner">
-                                                <img src="https://via.placeholder.com/520x465/ccc.png" alt="image-name">
-                                            </div>
-                                        </div>
-                                        <div class="info">
-                                            <h3 class="name">کتاب صوتی | کواکتیوکوچینگ</h3>
-                                            <h4 class="author">هنری کیمسی</h4>
-                                            <div class="price">
-                                                <div class="real">150,000</div>
-                                                <span class="toman">تومان</span>
                                             </div>
                                         </div>
                                     </a>

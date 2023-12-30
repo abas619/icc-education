@@ -424,6 +424,25 @@
   .myNavbar {
     .header-inner {
       position: relative;
+      grid-template-columns: 50px auto 1fr;
+    }
+    .btn-nav-button {
+      width: 38px;
+      height: 38px;
+      font-size: 18px;
+      .badge {
+        bottom: -4px;
+        right: -7px;
+      }
+    }
+    .nav-action {
+      .btn {
+        width: 38px;
+        height: 38px;
+        .fi {
+          font-size: 18px;
+        }
+      }
     }
   }
 }

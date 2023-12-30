@@ -19,7 +19,10 @@
     position: relative;
   }
   .img-container {
-    @include imgContainer(250px, 0);
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
   }
   .info {
     padding: 15px 5px 10px 5px;
@@ -38,30 +41,33 @@
       font-weight: 400;
       color: $textGrey;
       @include textTruncate(1);
+      margin-bottom: 5px;
     }
     .price {
       @include displayFlex(flex, flex-end, flex-end);
-      .real {
+      height: 50px;
+      .price-inner {
         @include displayFlex(flex, flex-start, flex-start);
         flex-direction: column;
         color: $textDark;
       }
       .discount {
-        font-size: 16px;
+        font-size: 14px;
         font-weight: 500;
         color: $textSilver;
         text-decoration: line-through;
+        line-height: normal;
       }
       h6 {
-        font-size: 20px;
+        font-size: 18px;
         font-weight: 800;
         margin-bottom: 0;
         color: $textDark;
+        line-height: normal;
       }
       .toman {
-        font-size: 15px;
+        font-size: 14px;
         font-weight: 400;
-        margin-right: 5px;
         color: $textGrey;
       }
     }
@@ -87,6 +93,16 @@
         color: white;
       }
     }
+  }
+  .percentage {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    background-color: $error;
+    padding: 2px 8px;
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
   }
   &:hover {
     .info {
@@ -264,31 +280,30 @@
       font-weight: 400;
       color: $textGrey;
       margin-bottom: 0;
+      @include displayFlex(flex, center, center);
       .fi {
-        font-size: 22px;
+        font-size: 20px;
         position: relative;
-        top: 5px;
-        margin-left: 5px;
+        margin-left: 10px;
         line-height: 0;
       }
     }
-    ul {
+    .sort-li {
       display: flex;
       align-items: center;
       justify-content: flex-start;
       margin-right: 20px;
-      li {
+      button {
         margin-left: 10px;
-        a {
-          border-radius: 0;
-          display: block;
-          font-size: 13px;
-          font-weight: 400;
-          color: $textGrey;
-          padding: 3px 5px;
-          background-color: $background;
-        }
-        &.active a {
+        border-radius: 0;
+        display: block;
+        font-size: 13px;
+        font-weight: 400;
+        color: $textGrey;
+        padding: 3px 5px;
+        background-color: $background;
+        border: none;
+        &.active {
           background-color: $primary;
           color: white;
         }
@@ -332,9 +347,6 @@
       width: 33.33%;
       padding-left: 15px;
       margin-bottom: 1.5rem;
-      .img-container {
-        height: 210px;
-      }
       &:hover {
         .card-inner {
           box-shadow: $boxshadow;
@@ -418,16 +430,16 @@
     .filter-choosen {
       @include displayFlex(flex, center, flex-start);
       flex-wrap: wrap;
-      li {
+      .link {
         font-size: 13px;
         font-weight: 400;
-        color: $textGrey;
-        background-color: $secondary;
+        color: white;
+        background-color: $primary;
         border-radius: 30px;
         padding: 5px 12px 5px 6px;
         margin: 0 0 8px 8px;
         @include displayFlex(flex, center, center);
-        a {
+        button {
           @include displayFlex(flex, center, center);
           width: 20px;
           height: 20px;
@@ -435,6 +447,7 @@
           border-radius: 50%;
           color: white;
           margin-right: 10px;
+          border: none;
           .fi {
             font-size: 8px;
           }
@@ -448,41 +461,11 @@
           font-size: 13px;
           font-weight: 600;
           margin: 0 5px;
-          color: $textDark;
+          color: white;
         }
       }
     }
     .list-category {
-      a {
-        display: block;
-      }
-      li {
-        margin-bottom: 10px;
-      }
-      .category-title {
-        font-size: 13px;
-        font-weight: 400;
-        color: $textGrey;
-        position: relative;
-        padding-right: 20px;
-        margin-bottom: 10px;
-        transition: all 0.2s ease-in-out;
-        &::before {
-          content: "\f25e";
-          font-family: $iconFontRegular;
-          position: absolute;
-          top: -2px;
-          right: 0;
-          font-size: 16px;
-        }
-        &:hover {
-          color: $primary;
-          padding-right: 25px;
-        }
-        &.active {
-          color: $primary;
-        }
-      }
       .sub-list-category {
         height: 200px;
         overflow-y: auto;
@@ -494,13 +477,15 @@
           position: relative;
           padding-right: 10px;
           transition: all 0.2s ease-in-out;
+          cursor: pointer;
+          margin: 6px 0;
           &.active {
             color: $primary;
             font-weight: 500;
           }
           &:hover {
             color: $primary;
-            padding-right: 35px;
+            padding-right: 15px;
           }
         }
       }
@@ -703,24 +688,7 @@
   }
 }
 
-@media (max-width: 1400px) {
-  #products-section {
-    .products-list {
-      .card-course {
-        .img-container {
-          height: 170px;
-        }
-      }
-    }
-  }
-}
-
 @media (max-width: 1199px) {
-  .card-course {
-    .img-container {
-      height: 200px;
-    }
-  }
   #products-section {
     .products-list {
       .card-course,
@@ -738,7 +706,7 @@
       padding: 0;
     }
     .sort-content {
-      ul,
+      .sort-li,
       .sort-title {
         display: none;
       }
@@ -777,9 +745,6 @@
       .card-course {
         flex: 0 0 33.33%;
         width: 33.33%;
-        .img-container {
-          height: 190px;
-        }
       }
       .card-teacher {
         flex: 0 0 33.33%;
@@ -800,9 +765,6 @@
   .card-course {
     .card-inner {
       padding: 5px;
-    }
-    .img-container {
-      height: 170px;
     }
     .info {
       .name {
@@ -891,9 +853,6 @@
     .products-list {
       .card-course {
         padding-left: 10px;
-        .img-container {
-          height: 140px;
-        }
       }
       .card-teacher {
         padding-left: 10px;
@@ -918,29 +877,16 @@
       padding-right: 5px;
     }
     .products-list {
+      .card-teacher,
       .card-course {
-        .img-container {
-          height: 120px;
-        }
-      }
-      .card-teacher {
         flex: 0 0 100%;
         width: 100%;
         .card-inner {
           padding: 8px !important;
         }
       }
-    }
-  }
-}
-
-@media (max-width: 370px) {
-  #products-section {
-    .products-list {
       .card-course {
-        .img-container {
-          height: 100px;
-        }
+        padding: 0;
       }
     }
   }

@@ -391,25 +391,15 @@
   }
 }
 
-.products-list {
+.user-products-list {
   margin-top: 2.5rem;
   .list-inner {
     display: grid;
     &.grid-4 {
       grid-template-columns: 25% 25% 25% 25%;
-      .card-course {
-        .img-container {
-          height: 150px;
-        }
-      }
     }
     &.grid-3 {
       grid-template-columns: 33.33% 33.33% 33.33%;
-      .card-course {
-        .img-container {
-          height: 200px;
-        }
-      }
     }
   }
   .list-title {
@@ -458,7 +448,6 @@
       }
       .author {
         font-size: 12px;
-        margin-bottom: 0;
         @include textTruncate(1);
       }
     }
@@ -715,324 +704,11 @@
   }
 }
 
-// .card-informaion {
-//   background-color: white;
-//   padding: 15px;
-//   margin-bottom: 20px;
-//   border: 1px solid $borderColor;
-//   .card-inner {
-//     ul {
-//       @include displayFlex(flex, center, flex-start);
-//       flex-wrap: wrap;
-//       li {
-//         flex: 0 0 50%;
-//         width: 50%;
-//         margin-bottom: 10px;
-//         font-size: 14px;
-//         font-weight: 400;
-//         .name {
-//           color: $textDark;
-//         }
-//         .desc {
-//           color: $textGrey;
-//           margin-right: 5px;
-//           &.success {
-//             color: $success;
-//           }
-//           &.error {
-//             color: $error;
-//           }
-//           &.warning {
-//             color: $info;
-//           }
-//         }
-//       }
-//     }
-//   }
-//   .c-footer {
-//     text-align: left;
-//     border-top: 1px solid $borderColor;
-//     padding-top: 15px;
-//     .button-group {
-//       .btn {
-//         padding: 0.4rem 0.8rem;
-//       }
-//     }
-//   }
-// }
-
-// .card-class {
-//   margin-bottom: 20px;
-//   .card-inner {
-//     background-color: white;
-//     padding: 15px;
-//     border-radius: 0;
-//     position: relative;
-//     border: 1px solid $borderColor;
-//   }
-//   .card-body {
-//     display: grid;
-//     grid-template-columns: 90px auto;
-//     padding: 0 0 15px 0;
-//   }
-//   .teacher-image {
-//     width: 90px;
-//     height: 90px;
-//     position: relative;
-//     .avatar {
-//       width: 100%;
-//       height: 100%;
-//       border-radius: 12px;
-//       object-fit: cover;
-//       position: relative;
-//       z-index: 20;
-//     }
-//     .fade-avatar {
-//       width: 100%;
-//       height: 100%;
-//       position: absolute;
-//       right: 0;
-//       top: 15px;
-//       transform: scale(0.9);
-//       opacity: 0.5;
-//       z-index: 1;
-//       filter: blur(10px);
-//     }
-//   }
-//   .info {
-//     padding-right: 20px;
-//     .teacher-name {
-//       font-size: 14px;
-//       font-weight: 500;
-//       color: $textDark;
-//       @include textTruncate(1);
-//     }
-//     ul {
-//       @include displayFlex(flex, center, flex-start);
-//       flex-wrap: wrap;
-//       li {
-//         flex: 0 0 50%;
-//         width: 50%;
-//         margin-top: 8px;
-//       }
-//       .icon {
-//         .fi {
-//           font-size: 16px;
-//           line-height: 0;
-//           display: inline-block;
-//           position: relative;
-//           top: 4px;
-//           color: $textSilver;
-//         }
-//       }
-//       .text {
-//         font-size: 13px;
-//         font-weight: 400;
-//         margin-right: 5px;
-//         color: $textDark;
-//         padding: 2px 5px;
-//         border-radius: 3px;
-//         &.bg-success {
-//           background-color: $success !important;
-//           color: white;
-//         }
-//         &.bg-error {
-//           background-color: $error !important;
-//           color: white;
-//         }
-//         &.bg-primary {
-//           background-color: $primary !important;
-//           color: white;
-//         }
-//       }
-//     }
-//   }
-//   .c-footer {
-//     @include displayFlex(flex, center, space-between);
-//     border-top: 1px solid $borderColor;
-//     padding-top: 15px;
-//     .shenase {
-//       h6 {
-//         font-size: 13px;
-//         font-weight: 400;
-//         color: $textDark;
-//         margin-bottom: 0;
-//         span {
-//           color: $textGrey;
-//         }
-//       }
-//     }
-//     .btn {
-//       padding: 0.5rem 0.8rem;
-//       font-size: 13px;
-//     }
-//   }
-//   .dropdown {
-//     position: absolute;
-//     top: 10px;
-//     left: 10px;
-//     .btn-dropdown {
-//       width: 30px;
-//       height: 30px;
-//       padding: 2px;
-//       border-radius: 0;
-//       border: none;
-//       background-color: transparent;
-//       .fi {
-//         line-height: 0;
-//         display: inline-block;
-//         position: relative;
-//         top: 3px;
-//         font-size: 18px;
-//         color: $textSilver;
-//       }
-//     }
-//     .dropdown-menu {
-//       border: none;
-//       box-shadow: 0 3px 5px rgba($color: $textGrey, $alpha: 0.1);
-//       border-radius: 10px;
-//     }
-//     .dropdown-item {
-//       font-size: 13px;
-//       color: $textDark;
-//       .fi {
-//         font-size: 18px;
-//         margin-left: 10px;
-//         line-height: 0;
-//         position: relative;
-//         top: 4px;
-//         display: inline-block;
-//         color: $textSilver;
-//       }
-//       &.red {
-//         .fi {
-//           color: $error;
-//         }
-//       }
-//     }
-//   }
-// }
-
-// .card-ticket {
-//   border: 1px solid $borderColor;
-//   border-radius: 0;
-//   padding: 10px;
-//   margin-bottom: 10px;
-//   .info {
-//     margin-bottom: 10px;
-//     .subject {
-//       font-size: 16px;
-//       font-weight: 600;
-//       color: $textGrey;
-//       margin-bottom: 5px;
-//     }
-//     .date {
-//       color: $textSilver;
-//     }
-//   }
-//   .description {
-//     p {
-//       font-size: 14px;
-//       font-weight: 400;
-//       color: $textDark;
-//     }
-//   }
-//   &.reply {
-//     border-color: $primary;
-//     border-right-width: 4px;
-//     background-color: rgba($color: $primary, $alpha: 0.1);
-//     margin-bottom: 0;
-//   }
-//   .satus {
-//     margin-top: 10px;
-//     font-size: 13px;
-//     font-weight: 600;
-//     text-align: left;
-//     span {
-//       border-radius: 0;
-//       margin-right: auto;
-//       padding: 5px 10px;
-//       display: inline-block;
-//     }
-//     &.waiting {
-//       span {
-//         background-color: rgba($color: $warning, $alpha: 0.3);
-//         color: $textDark;
-//       }
-//     }
-//     &.success {
-//       span {
-//         background-color: rgba($color: $success, $alpha: 0.1);
-//         color: $success;
-//       }
-//     }
-//     &.error {
-//       span {
-//         background-color: rgba($color: $error, $alpha: 0.1);
-//         color: $error;
-//       }
-//     }
-//     &.info {
-//       span {
-//         background-color: rgba($color: $info, $alpha: 0.1);
-//         color: $info;
-//       }
-//     }
-//   }
-// }
-
-// .card-certificate {
-//   background-color: white;
-//   border-radius: 0;
-//   margin-bottom: 20px;
-//   border: 1px solid $borderColor;
-//   .card-inner {
-//     padding: 10px;
-//     ul {
-//       @include displayFlex(flex, center, flex-start);
-//       flex-wrap: wrap;
-//       li {
-//         flex: 0 0 50%;
-//         width: 50%;
-//         margin-bottom: 10px;
-//         font-size: 14px;
-//         font-weight: 400;
-//         .name {
-//           color: $textDark;
-//         }
-//         .desc {
-//           color: $textGrey;
-//           margin-right: 5px;
-//         }
-//       }
-//     }
-//   }
-//   .c-footer {
-//     text-align: left;
-//     border-top: 1px solid $borderColor;
-//     padding: 10px;
-//     .button-group {
-//       .btn {
-//         padding: 0.4rem 0.8rem;
-//         min-width: unset;
-//         font-size: 13px;
-//       }
-//     }
-//   }
-// }
-
 @media (max-width: 1400px) {
-  .products-list {
+  .user-products-list {
     .list-inner {
       &.grid-4 {
         grid-template-columns: 33.33% 33.33% 33.33%;
-      }
-      &.grid-3 {
-        .card-course {
-          .img-container {
-            height: 170px;
-          }
-        }
       }
     }
   }
@@ -1077,7 +753,7 @@
       }
     }
   }
-  .products-list {
+  .user-products-list {
     .list-inner {
       &.grid-3 {
         grid-template-columns: 50% 50%;
@@ -1133,7 +809,7 @@
   .btn-usermenu {
     display: flex;
   }
-  .products-list {
+  .user-products-list {
     .list-inner {
       &.grid-3 {
         grid-template-columns: 33.33% 33.33% 33.33%;
@@ -1153,7 +829,7 @@
       }
     }
   }
-  .products-list {
+  .user-products-list {
     .list-inner {
       &.grid-4,
       &.grid-3 {

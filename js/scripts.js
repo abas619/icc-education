@@ -94,47 +94,26 @@ function hideUserProfileSideMenu() {
   userMenu.classList.remove("active");
   overlayUserMenu.classList.remove("active");
 }
-
-// Show Filter on Mobile
-// if (document.getElementById("products-section") !== null) {
-//   var productsSection = document.getElementById("products-section");
-//   var productsSide = productsSection.querySelector(".products-side");
-//   var btnAdvancedSearch = document.querySelector(".btn-advanced-search");
-//   var filtersideOverlay = document.querySelector(".filterside-overlay");
-//   var closeAdvanced = document.querySelector(".btn-close-filter");
-//   btnAdvancedSearch.addEventListener("click", function () {
-//     productsSide.classList.add("active");
-//     filtersideOverlay.classList.add("active");
-//     body.classList.add("fixedposition");
-//   });
-//   closeAdvanced.addEventListener("click", function () {
-//     productsSide.classList.remove("active");
-//     body.classList.remove("fixedposition");
-//     filtersideOverlay.classList.remove("active");
-//   });
-//   filtersideOverlay.addEventListener("click", function () {
-//     productsSide.classList.remove("active");
-//     body.classList.remove("fixedposition");
-//     filtersideOverlay.classList.remove("active");
-//   });
-// }
-
-// if (document.querySelector(".user-dashboard-section") != null) {
-//   var userMenu = document.querySelector(".grid-user-menu");
-//   var overlayUserMenu = document.querySelector(".overlay-userMenu");
-//   var btnUserMenu = document.querySelector(".btn-usermenu");
-//   var btnCloseprofileMenu = document.querySelector(".btn-closeprofileMenu");
-
-//   btnUserMenu.onclick = () => {
-//     userMenu.classList.add("active");
-//     overlayUserMenu.classList.add("active");
-//   };
-//   overlayUserMenu.onclick = () => {
-//     userMenu.classList.remove("active");
-//     overlayUserMenu.classList.remove("active");
-//   };
-//   btnCloseprofileMenu.onclick = () => {
-//     userMenu.classList.remove("active");
-//     overlayUserMenu.classList.remove("active");
-//   };
-// }
+// Show Side Basket
+if (document.getElementById("btn-basket") !== null) {
+  var btnSideBasket = document.getElementById("btn-basket");
+  var sideBasket = document.getElementById("side-basket");
+  var dismissBasket = document.getElementById("dismiss-basket");
+  var basketOverlay = document.querySelector(".basket-overlay");
+  var body = document.querySelector("body");
+  btnSideBasket.addEventListener("click", function () {
+    sideBasket.classList.add("active");
+    basketOverlay.classList.add("active");
+    body.classList.add("fixedposition");
+  });
+  basketOverlay.addEventListener("click", function () {
+    sideBasket.classList.remove("active");
+    basketOverlay.classList.remove("active");
+    body.classList.remove("fixedposition");
+  });
+  dismissBasket.addEventListener("click", function () {
+    sideBasket.classList.remove("active");
+    basketOverlay.classList.remove("active");
+    body.classList.remove("fixedposition");
+  });
+}

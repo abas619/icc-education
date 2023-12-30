@@ -92,7 +92,7 @@
                 <div class="nav-action">
                     <!-- Basket -->
                     <div class="nav-basket">
-                        <button class="btn-nav-button">
+                        <button class="btn-nav-button" id="btn-basket">
                             <i class="fi fi-rr-shopping-bag"></i>
                             <span class="badge">3</span>
                         </button>
@@ -154,6 +154,74 @@
                 </ul>
             </div>
         </div>
+    </div>
+
+    <!-- Side Basket -->
+    <div class="side-basket-wrapper">
+        <!-- Sidebar -->
+        <nav id="side-basket">
+            <button type="button" id="dismiss-basket">
+                <i class="fi fi-rr-cross"></i>
+            </button>
+            <button type="button" class="delete-basket">
+                <i class="fi fi-rr-trash"></i>
+            </button>
+            <!-- Basket Header -->
+            <div class="basket-header">
+                <h2 class="order-numbers">سبد خرید - 2 محصول</h2>
+            </div>
+            <!-- Basket List Item -->
+            <div class="basket-list-item">
+                <div class="item">
+                    <div class="item-inner">
+                        <div class="product-image">
+                            <a href="#">
+                                <img src="images/thumb-120x120.png" alt="pic-name" />
+                            </a>
+                        </div>
+                        <div class="product-info">
+                            <a href="#">
+                                <h3 class="name">توسعه کسب و کار آنلاین</h3>
+                            </a>
+                            <div class="data">
+                                <div class="price">
+                                    <div class="number">5,200,000<span class="toman">تومان</span></div>
+                                </div>
+                                <button type="button" class="btn-delete"><i class="fi fi-rr-cross"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="item-inner">
+                        <div class="product-image">
+                            <a href="#">
+                                <img src="images/thumb-120x120.png" alt="pic-name" />
+                            </a>
+                        </div>
+                        <div class="product-info">
+                            <a href="#">
+                                <h3 class="name">دوره‌های یادگیری فردی</h3>
+                            </a>
+                            <div class="data">
+                                <div class="price">
+                                    <div class="number">5,200,000<span class="toman">تومان</span></div>
+                                </div>
+                                <button type="button" class="btn-delete"><i class="fi fi-rr-cross"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Pay Button -->
+            <div class="basket-pays">
+                <a href="basket-details.html" class="goto-cart">
+                    <span class="count-price">549,000 تومان</span>
+                    <span class="btn-text">تایید سفارش</span>
+                </a>
+            </div>
+        </nav>
+        <div class="basket-overlay"></div>
     </div>
 
 

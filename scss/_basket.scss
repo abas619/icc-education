@@ -154,11 +154,11 @@
   }
 }
 .cart-code {
-  text-align: center;
   padding: 0 30px;
   .code-inner {
     background-color: rgba($color: $primary, $alpha: 0.1);
     padding: 20px;
+    text-align: center;
   }
   h2 {
     color: $primary;
@@ -179,6 +179,44 @@
         border-color: $primary;
       }
       border-radius: 0;
+    }
+  }
+  .error-msg {
+    color: $error;
+  }
+  .code-msg {
+    padding: 20px;
+    position: relative;
+    &.color-success {
+      background-color: rgba($color: $success, $alpha: 0.1);
+    }
+    &.color-error {
+      background-color: rgba($color: $error, $alpha: 0.1);
+    }
+    h6 {
+      color: $success;
+    }
+    ul {
+      li {
+        margin: 5px 0;
+      }
+    }
+    .clear-code {
+      position: absolute;
+      left: 10px;
+      top: 10px;
+      width: 34px;
+      height: 34px;
+      padding: 5px;
+      font-size: 16px;
+      border-radius: 50%;
+      border: none;
+      @include displayFlex(flex, center, center);
+      color: $textGrey;
+      background-color: transparent;
+      &:hover {
+        color: $error;
+      }
     }
   }
 }
