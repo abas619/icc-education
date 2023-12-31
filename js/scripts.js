@@ -117,3 +117,12 @@ if (document.getElementById("btn-basket") !== null) {
     body.classList.remove("fixedposition");
   });
 }
+
+function changeSort(el) {
+  let btnsGroup = document.querySelectorAll(".btn-li");
+  let i;
+  for (i = 0; i < btnsGroup.length; i++) {
+    btnsGroup[i].classList.remove("active");
+  }
+  el.classList.add("active");
+}
