@@ -118,6 +118,7 @@ if (document.getElementById("btn-basket") !== null) {
   });
 }
 
+// For Sort Buttons
 function changeSort(el) {
   let btnsGroup = document.querySelectorAll(".btn-li");
   let i;
@@ -125,4 +126,35 @@ function changeSort(el) {
     btnsGroup[i].classList.remove("active");
   }
   el.classList.add("active");
+}
+
+// For User Course Video Player
+if (document.querySelector(".course-season-list") !== null) {
+  var videoList = document.querySelectorAll(".sub-info");
+  var courseVideoPreview = document.querySelector(".course-video-preview");
+  videoList.forEach((vidItem) => {
+    vidItem.addEventListener("click", function () {
+      ChangeVideoInfo(vidItem);
+      window.scroll(0, findPosition(courseVideoPreview) - 120);
+    });
+  });
+}
+function findPosition(obj) {
+  var currenttop = 0;
+  if (obj.offsetParent) {
+    do {
+      currenttop += obj.offsetTop;
+    } while ((obj = obj.offsetParent));
+    return [currenttop];
+  }
+}
+function ChangeVideoInfo(videoItem) {
+  let videoname = courseVideoPreview.querySelector(".vid-name");
+  let videoTime = courseVideoPreview.querySelector(".vid-time");
+  let videoSource = courseVideoPreview.getElementsByTagName("video")[0];
+  let source = videoSource.getElementsByTagName("source");
+  videoname.innerHTML = videoItem.querySelector(".name").innerHTML;
+  videoTime.innerHTML = videoItem.querySelector(".time").innerHTML;
+  source[0].src = videoItem.dataset.videoSrc;
+  videoSource.load();
 }
