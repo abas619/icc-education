@@ -468,9 +468,11 @@
       @include displayFlex(flex, center, space-between);
     }
     .video-info {
+      padding-left: 20px;
+      flex-grow: 1;
       .vid-name {
-        font-size: 16px;
-        font-weight: 600;
+        font-size: 18px;
+        font-weight: 800;
         color: $textDark;
         margin-bottom: 5px;
       }
@@ -481,10 +483,11 @@
       }
     }
     .send-comment {
-      .btn-primary {
+      .btn {
         padding: 0.65rem 1.2rem;
         font-size: 14px;
         min-width: unset;
+        margin-bottom: 5px;
         .fi {
           margin-left: 10px;
           font-size: 18px;
@@ -844,31 +847,14 @@
       flex: 0 0 100%;
       width: 100%;
     }
+    .video-info {
+      padding-left: 0;
+    }
     .send-comment {
-      text-align: left;
+      text-align: center;
       margin-top: 10px;
     }
   }
-
-  // .card-notif {
-  //   h6 {
-  //     font-size: 14px;
-  //   }
-  //   .desc {
-  //     p {
-  //       font-size: 13px;
-  //     }
-  //   }
-  //   .btns-action {
-  //     .btn {
-  //       padding: 0.5rem 1rem;
-  //       min-width: 100px;
-  //     }
-  //   }
-  // }
-  // .notification-center {
-  //   padding: 15px;
-  // }
 }
 
 @media (max-width: 575px) {
@@ -886,7 +872,6 @@
       }
     }
   }
-
   .card-status {
     h2 {
       font-size: 16px;
@@ -902,7 +887,6 @@
       }
     }
   }
-
   .course-details-section {
     .course-video-preview {
       .video-info {
@@ -977,82 +961,10 @@
       }
     }
   }
-
-  // .register-recipe-group {
-  //   margin: 1rem 0;
-  //   .card-register-recipe {
-  //     flex: 1 0 100%;
-  //     width: 100%;
-  //     padding: 8px 0;
-  //   }
-  // }
-
-  // .card-status {
-  //   .thumb {
-  //     width: 60px;
-  //   }
-  //   .info {
-  //     h6 {
-  //       font-size: 12px;
-  //     }
-  //     h3 {
-  //       font-size: 1.2rem;
-  //     }
-  //   }
-  // }
-  // .card-notif {
-  //   h6 {
-  //     padding-left: 0;
-  //   }
-  //   .date {
-  //     position: relative;
-  //     top: unset;
-  //     left: unset;
-  //   }
-  //   .btns-action {
-  //     .btn {
-  //       padding: 0.5rem 1rem;
-  //       min-width: 100px;
-  //     }
-  //   }
-  // }
-  // .notification-center {
-  //   padding: 10px;
-  // }
-  // .card-informaion {
-  //   .card-inner {
-  //     ul {
-  //       flex-wrap: wrap;
-  //       li {
-  //         flex: 0 0 100%;
-  //         width: 100%;
-  //       }
-  //     }
-  //   }
-  // }
-  // .card-class {
-  //   .card-body {
-  //     grid-template-columns: 70px auto;
-  //   }
-  //   .teacher-image {
-  //     width: 70px;
-  //     height: 70px;
-  //   }
-  //   .info ul li {
-  //     flex: 0 0 100%;
-  //     width: 100%;
-  //   }
-  // }
-  // .card-certificate {
-  //   .card-inner {
-  //     ul li {
-  //       flex: 0 0 100%;
-  //       width: 100%;
-  //     }
-  //   }
-  // }
 }
 
+@media (max-width: 400px) {
+}
 @media (max-width: 350px) {
   .user-dashboard-section .grid-user-menu {
     width: 100%;
@@ -1061,17 +973,5 @@
       border-radius: 0;
     }
   }
-  // .card-class {
-  //   .c-footer {
-  //     flex-direction: column;
-  //     .button-group {
-  //       width: 100%;
-  //       margin-top: 10px;
-  //       .btn {
-  //         width: 100%;
-  //       }
-  //     }
-  //   }
-  // }
 }
 /*#endregion -------------- User Profile */
