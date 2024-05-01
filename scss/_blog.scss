@@ -1,0 +1,218 @@
+/*#region ----------------- Blogs */
+.card-blog {
+  margin-top: 20px;
+  .card-inner {
+    padding: 10px;
+    background-color: white;
+    display: grid;
+    grid-template-columns: 220px auto;
+    transition: all 0.3s ease-in-out;
+  }
+  .thumb {
+    img {
+      width: 100%;
+    }
+  }
+  .info {
+    padding: 5px 10px;
+    .date {
+      font-size: 14px;
+      font-weight: 400;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      color: $textGrey;
+      .fi {
+        margin-left: 5px;
+        font-size: 16px;
+      }
+    }
+    h2 {
+      font-size: 16px;
+      @include textTruncate(1);
+      color: $textDark;
+      margin-bottom: 5px;
+    }
+    p {
+      font-size: 14px;
+      @include textTruncate(2);
+      color: $textGrey;
+      margin-bottom: 0;
+    }
+  }
+  &:hover {
+    .card-inner {
+      box-shadow: $boxshadow;
+    }
+    .info {
+      h2 {
+        color: $primary;
+      }
+    }
+  }
+}
+
+.blogs-list-section {
+  margin: 150px 0 100px 0;
+  .side-blog {
+    position: sticky;
+    top: 50px;
+  }
+  .side-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: $textDark;
+    border-bottom: 1px solid $borderColor;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+  }
+  .articles {
+    background-color: white;
+    padding: 20px;
+    border-radius: 15px;
+  }
+  .tags {
+    margin-top: 20px;
+    ul {
+      @include displayFlex(flex, center, flex-start);
+      flex-wrap: wrap;
+      li {
+        margin: 5px 0 5px 5px;
+        background-color: white;
+        border-radius: 20rem;
+        font-size: 14px;
+        font-weight: 500;
+        color: $textDark;
+        padding: 5px 10px;
+      }
+    }
+  }
+  .card-mini-blog {
+    margin-bottom: 15px;
+    .name {
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 24px;
+      color: $textDark;
+    }
+    .date {
+      display: flex;
+      align-items: center;
+      font-size: 13px;
+      color: $textGrey;
+      margin-bottom: 12px;
+      .fi {
+        margin-left: 5px;
+        font-size: 14px;
+      }
+    }
+    &:hover {
+      .name {
+        color: $primary;
+      }
+    }
+  }
+}
+
+.blog-details {
+  padding-left: 20px;
+  .details-inner {
+    background-color: white;
+    box-shadow: $boxshadow;
+    padding: 1.5rem;
+    border-radius: 15px;
+  }
+  .thumb {
+    img {
+      width: 100%;
+      object-fit: cover;
+      border-radius: 15px;
+    }
+  }
+  .information {
+    margin-top: 1.5rem;
+    .title {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+    .status-info {
+      @include displayFlex(flex, center, flex-start);
+      margin-bottom: 1.5rem;
+      li {
+        font-size: 13px;
+        font-weight: 400;
+        @include displayFlex(flex, center, center);
+        margin-left: 20px;
+        color: $textGrey;
+        .fi {
+          margin-left: 5px;
+          font-size: 16px;
+          color: $textSilver;
+        }
+      }
+    }
+  }
+  .mini-desc {
+    background-color: rgba($color: $primary, $alpha: 0.1);
+    color: $primary;
+    padding: 20px;
+    border-right: 5px solid $primary;
+    margin-bottom: 1.5rem;
+    border-radius: 15px 0 0 15px;
+    p {
+      margin-bottom: 0;
+      font-weight: 400;
+      text-align: justify;
+    }
+  }
+  .description {
+    margin-bottom: 2rem;
+    p {
+      font-weight: 400;
+      color: $textDark;
+      text-align: justify;
+      margin-bottom: 0.875rem;
+    }
+  }
+  .sourse {
+    background-color: $background;
+    padding: 20px;
+    border-radius: 15px;
+    h6 {
+      font-size: 16px;
+      font-weight: 600;
+      color: $textDark;
+    }
+    a {
+      color: $primary;
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .blogs-list-section {
+    margin: 120px 0 100px 0;
+  }
+  .blog-details {
+    padding-left: 0;
+  }
+}
+@media (max-width: 768px) {
+  .card-blog {
+    .card-inner {
+      grid-template-columns: 160px auto;
+      align-items: center;
+    }
+    .info {
+      h2 {
+        -webkit-line-clamp: 2;
+        font-size: 14px;
+      }
+      p {
+        display: none;
+      }
+    }
+  }
+}
+/*#endregion -------------- Blogs */

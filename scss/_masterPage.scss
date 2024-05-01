@@ -6,6 +6,10 @@
       text-align: justify;
     }
   }
+  .register-form {
+    background-color: white;
+    padding: 30px;
+  }
 }
 .master-title {
   text-align: center;
@@ -80,6 +84,61 @@
   }
 }
 
+.register-section {
+  margin: 5rem 0;
+  .page-title {
+    h1 {
+      color: white;
+      &::before {
+        background-color: $secondary;
+      }
+    }
+  }
+  .section-inner {
+    margin-top: 2rem;
+    padding: 20px;
+    background-color: rgba($color: $primary, $alpha: 1);
+    overflow: hidden;
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: -100px;
+      width: 500px;
+      height: 500px;
+      background-color: rgba($color: white, $alpha: 0.1);
+      transform: rotate(65deg);
+    }
+  }
+  .my-row {
+    display: grid;
+    grid-template-columns: auto 450px;
+    align-items: center;
+  }
+  .image-content {
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+  .text-content {
+    padding: 20px 20px 20px 30px;
+    p {
+      color: white;
+      text-align: justify;
+      margin: 15px 0;
+    }
+  }
+  .button-group {
+    margin-top: 30px;
+    .btn {
+      background-color: white;
+      color: $primary;
+    }
+  }
+}
+
 @media (max-width: 992px) {
   .masterpage-section {
     margin-top: 75px;
@@ -96,6 +155,22 @@
       padding: 10px 0 0 0;
     }
   }
+  .register-section {
+    .my-row {
+      grid-template-columns: 100%;
+    }
+    .image-content {
+      img {
+        aspect-ratio: 16/9;
+      }
+    }
+    .text-content {
+      padding: 20px 0;
+    }
+    .button-group {
+      text-align: center;
+    }
+  }
 }
 @media (max-width: 575px) {
   .masterpage-section {
@@ -106,6 +181,13 @@
   }
   .contact-us-section {
     .buttons-group {
+      .btn {
+        width: 100%;
+      }
+    }
+  }
+  .register-section {
+    .button-group {
       .btn {
         width: 100%;
       }

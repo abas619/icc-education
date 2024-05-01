@@ -8,11 +8,11 @@
     <meta name="theme-color" content="#007ddf" />
     <meta name="msapplication-navbutton-color" content="#007ddf">
     <meta name="apple-mobile-web-app-status-bar-style" content="#007ddf">
-    <title>آموزشگاه ICC | پروفایل کاربر</title>
+    <title>آموزشگاه ICC | لیست گزارش‌ انتشار دوره‌ها</title>
     <link href="css/bootstrap.rtl.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
     <link rel="stylesheet" href="scss/main.css">
-    <link rel="stylesheet" href="plugins/noUIslider/nouislider.css">
+    <link rel="stylesheet" href="plugins/dropzone/dropzone.min.css">
 
     <!-- Font Icons -->
     <link href="css/all.rounded.css" rel="stylesheet" type="text/css" />
@@ -151,142 +151,166 @@
         </div>
     </div>
 
-    <div class="user-dashboard-section">
-        <div class="container-lg">
-            <div class="grid-layout">
-                <div class="grid-user-menu">
-                    <div class="grid-inner">
-                        <!-- close Userprofile -->
-                        <button type="button" class="btn-closeprofileMenu" onclick="hideUserProfileSideMenu()"><i
-                                class="fi fi-rr-cross"></i></button>
-                        <!-- User Image -->
-                        <div class="user-image">
-                            <div class="img-inner">
-                                <img src="images/thumb-120x120.png" alt="user-name">
-                            </div>
-                            <div class="user-name">
-                                <h5>شیده صفری</h5>
-                                <a href="user-information.html" type="button" class="btn-opernImage"><i
-                                        class="fi fi-rr-pencil"></i>ویرایش پروفایل</a>
-                            </div>
-                        </div>
-                        <!-- User Menu -->
-                        <div class="user-menu">
-                            <ul class="menu-list">
-                                <li class="menu-item"><a href="user-dashboard.html" class="btn-collape"><i
-                                            class="fi fi-rr-apps"></i>داشبورد</a></li>
-                                <li class="menu-item"><a href="user-information.html" class="btn-collape"><i
-                                            class="fi fi-rr-user"></i>اطلاعات کاربری</a></li>
-                                <li class="menu-item"><a href="user-courses.html" class="btn-collape"><i
-                                            class="fi fi-rr-computer"></i>دوره‌های
-                                        من</a></li>
-                                <li class="menu-item active"><a href="user-bookmarks.html" class="btn-collape"><i
-                                            class="fi fi-rr-bookmark"></i>لیست‌
-                                        من</a></li>
-                                <li class="menu-item">
-                                    <a href="user-tickets.html" class="btn-collape">
-                                        <i class="fi fi-rr-comment-alt"></i>
-                                        پیام‌های دریافتی
-                                        <span
-                                            class="position-absolute top-50 end-0 translate-middle badge rounded-pill bg-danger">
-                                            2+
-                                        </span>
-                                    </a>
-                                </li>
-                                <li class="menu-item"><a href="user-password.html" class="btn-collape"><i
-                                            class="fi fi-rr-lock"></i>تغییر رمز عبور</a></li>
-                                <li class="menu-item"><a href="user-transactions.html" class="btn-collape"><i
-                                            class="fi fi-rr-receipt"></i>تراکنش‌ها</a></li>
-                                <li class="menu-item">
-                                    <a href="#" class="btn-collape" data-bs-toggle="modal"
-                                        data-bs-target="#modal-logout">
-                                        <i class="fi fi-rr-sign-out-alt"></i>
-                                        خروج از حساب کاربری
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="overlay-userMenu" onclick="hideUserProfileSideMenu()"></div>
+    <!-- Page Header -->
+    <!-- <div class="page-header">
+        <div class="header-inner" style="background-image: url(images/page-header-bg.jpg);">
+            <div class="container-lg">
+                <h1 class="text-center">ثبت نام سازمانی</h1>
+                <p class="text-center">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت</p>
+            </div>
+        </div>
+    </div> -->
+
+    <div class="blogs-list-section">
+        <div class="container">
+            <div class="page-title">
+                <div class="title-inner">
+                    <h1>گزارش انتشار دوره‌ها</h1>
                 </div>
-                <div class="grid-main">
-                    <div class="grid-inner">
-                        <div class="main-title">
-                            <div class="title-inner">
-                                <button type="button" class="btn-usermenu" onclick="showUserProfileSideMenu()"><i
-                                        class="fi fi-rr-menu-dots-vertical"></i></button>
-                                <div class="icon">
-                                    <i class="fi fi-rr-bookmark"></i>
+            </div>
+            <div class="section-inner">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="card-blog">
+                            <a href="blog-details.html" class="card-inner">
+                                <div class="thumb">
+                                    <img src="https://via.placeholder.com/800x450/ccc.png" alt="">
                                 </div>
-                                <h3>لیست من</h3>
-                            </div>
-                        </div>
-                        <div class="main-body">
-
-                            <div class="user-products-list mt-0">
-                                <div class="list-inner grid-3">
-                                    <div class="card-course">
-                                        <div class="card-inner">
-                                            <div class="img-container">
-                                                <a href="product-details.html" class="img-inner">
-                                                    <img src="images/thumb-520x465.png" alt="image-name">
-                                                </a>
-                                            </div>
-                                            <div class="info">
-                                                <h3 class="name"><a href="product-details.html">کتاب صوتی |
-                                                        کواکتیوکوچینگ</a></h3>
-                                                <h4 class="author">هنری کیمسی</h4>
-                                                <div class="delete">
-                                                    <button type="submit" class="btn-delete" data-bs-toggle="modal"
-                                                        data-bs-target="#modal-delete"><i
-                                                            class="fi fi-rr-trash"></i></button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="card-course">
-                                        <div class="card-inner">
-                                            <div class="img-container">
-                                                <a href="product-details.html" class="img-inner">
-                                                    <img src="images/thumb-520x465.png" alt="image-name">
-                                                </a>
-                                            </div>
-                                            <div class="info">
-                                                <h3 class="name"><a href="product-details.html">کتاب صوتی |
-                                                        کواکتیوکوچینگ</a></h3>
-                                                <h4 class="author">هنری کیمسی</h4>
-                                                <div class="delete">
-                                                    <button type="submit" class="btn-delete" data-bs-toggle="modal"
-                                                        data-bs-target="#modal-delete"><i
-                                                            class="fi fi-rr-trash"></i></button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="card-course">
-                                        <div class="card-inner">
-                                            <div class="img-container">
-                                                <a href="product-details.html" class="img-inner">
-                                                    <img src="images/thumb-520x465.png" alt="image-name">
-                                                </a>
-                                            </div>
-                                            <div class="info">
-                                                <h3 class="name"><a href="product-details.html">کتاب صوتی |
-                                                        کواکتیوکوچینگ</a></h3>
-                                                <h4 class="author">هنری کیمسی</h4>
-                                                <div class="delete">
-                                                    <button type="submit" class="btn-delete" data-bs-toggle="modal"
-                                                        data-bs-target="#modal-delete"><i
-                                                            class="fi fi-rr-trash"></i></button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                <div class="info">
+                                    <div class="date"><i class="fi fi-rr-calendar"></i>21 اسفند 1403</div>
+                                    <h2>گزارش متنی دوره کارآفرینان اهل دل</h2>
+                                    <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان
+                                        گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان است.</p>
                                 </div>
-                            </div>
-
+                            </a>
                         </div>
                     </div>
+                    <div class="col-lg-6">
+                        <div class="card-blog">
+                            <a href="blog-details.html" class="card-inner">
+                                <div class="thumb">
+                                    <img src="https://via.placeholder.com/800x450/ccc.png" alt="">
+                                </div>
+                                <div class="info">
+                                    <div class="date"><i class="fi fi-rr-calendar"></i>21 اسفند 1403</div>
+                                    <h2>گزارش متنی دوره کارآفرینان اهل دل</h2>
+                                    <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان
+                                        گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان است.</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="card-blog">
+                            <a href="blog-details.html" class="card-inner">
+                                <div class="thumb">
+                                    <img src="https://via.placeholder.com/800x450/ccc.png" alt="">
+                                </div>
+                                <div class="info">
+                                    <div class="date"><i class="fi fi-rr-calendar"></i>21 اسفند 1403</div>
+                                    <h2>گزارش متنی دوره کارآفرینان اهل دل</h2>
+                                    <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان
+                                        گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان است.</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="card-blog">
+                            <a href="blog-details.html" class="card-inner">
+                                <div class="thumb">
+                                    <img src="https://via.placeholder.com/800x450/ccc.png" alt="">
+                                </div>
+                                <div class="info">
+                                    <div class="date"><i class="fi fi-rr-calendar"></i>21 اسفند 1403</div>
+                                    <h2>گزارش متنی دوره کارآفرینان اهل دل</h2>
+                                    <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان
+                                        گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان است.</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="card-blog">
+                            <a href="blog-details.html" class="card-inner">
+                                <div class="thumb">
+                                    <img src="https://via.placeholder.com/800x450/ccc.png" alt="">
+                                </div>
+                                <div class="info">
+                                    <div class="date"><i class="fi fi-rr-calendar"></i>21 اسفند 1403</div>
+                                    <h2>گزارش متنی دوره کارآفرینان اهل دل</h2>
+                                    <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان
+                                        گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان است.</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="card-blog">
+                            <a href="blog-details.html" class="card-inner">
+                                <div class="thumb">
+                                    <img src="https://via.placeholder.com/800x450/ccc.png" alt="">
+                                </div>
+                                <div class="info">
+                                    <div class="date"><i class="fi fi-rr-calendar"></i>21 اسفند 1403</div>
+                                    <h2>گزارش متنی دوره کارآفرینان اهل دل</h2>
+                                    <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان
+                                        گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان است.</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="card-blog">
+                            <a href="blog-details.html" class="card-inner">
+                                <div class="thumb">
+                                    <img src="https://via.placeholder.com/800x450/ccc.png" alt="">
+                                </div>
+                                <div class="info">
+                                    <div class="date"><i class="fi fi-rr-calendar"></i>21 اسفند 1403</div>
+                                    <h2>گزارش متنی دوره کارآفرینان اهل دل</h2>
+                                    <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان
+                                        گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان است.</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="card-blog">
+                            <a href="blog-details.html" class="card-inner">
+                                <div class="thumb">
+                                    <img src="https://via.placeholder.com/800x450/ccc.png" alt="">
+                                </div>
+                                <div class="info">
+                                    <div class="date"><i class="fi fi-rr-calendar"></i>21 اسفند 1403</div>
+                                    <h2>گزارش متنی دوره کارآفرینان اهل دل</h2>
+                                    <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان
+                                        گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان است.</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="my-pagination">
+                    <nav aria-label="Page navigation">
+                        <ul class="pagination">
+                            <li class="page-item next">
+                                <a class="page-link" href="#" aria-label="Previous">
+                                    <i class="fi fi-rr-arrow-small-right"></i>
+                                    <span>بعدی</span>
+                                </a>
+                            </li>
+                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item prev">
+                                <a class="page-link" href="#" aria-label="Next">
+                                    <span>قبلی</span>
+                                    <i class="fi fi-rr-arrow-small-left"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
                 </div>
             </div>
         </div>
@@ -372,21 +396,33 @@
         </div>
     </footer>
 
-    <!-- Modal Delete -->
-    <div class="modal fade" id="modal-delete" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title"><i class="fi fi-rr-trash"></i>حذف</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    <!-- Mobile Bottom Navbar -->
+    <div class="mobile-bottom-navbar">
+        <div class="container">
+            <div class="navbar-inner">
+                <div class="item active">
+                    <a href="#">
+                        <div class="icon"><i class="fi fi-rr-home"></i></div>
+                        <h6>خانه</h6>
+                    </a>
                 </div>
-                <div class="modal-body">
-                    <h6 class="message">از لیست من حذف شود؟</h6>
+                <div class="item">
+                    <a href="#">
+                        <div class="icon"><i class="fi fi-rr-apps"></i></div>
+                        <h6>دسته بندی</h6>
+                    </a>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary-outline icon-right" data-bs-dismiss="modal"><i
-                            class="fi fi-rr-cross"></i>خیر</button>
-                    <button type="button" class="btn btn-danger icon-right"><i class="fi fi-rr-check"></i>بله</button>
+                <div class="item">
+                    <a href="#">
+                        <div class="icon"><i class="fi fi-rr-search"></i></div>
+                        <h6>جستجو</h6>
+                    </a>
+                </div>
+                <div class="item">
+                    <a href="#">
+                        <div class="icon"><i class="fi fi-rr-user"></i></div>
+                        <h6>حساب کاربری</h6>
+                    </a>
                 </div>
             </div>
         </div>
@@ -398,8 +434,8 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script src="plugins/swiperjs/swiper-initial.js"></script>
     <script src="js/scripts.js"></script>
-    <script src="plugins/noUIslider/nouislider.min.js"></script>
-    <script src="plugins/noUIslider/nouislider.initial.js"></script>
+    <script src="plugins/dropzone/dropzone.min.js"></script>
+    <script src="plugins/dropzone/dropzone.init.js"></script>
 
 </body>
 

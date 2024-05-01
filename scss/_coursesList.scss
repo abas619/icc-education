@@ -22,6 +22,7 @@
     img {
       width: 100%;
       object-fit: cover;
+      aspect-ratio: 4/3;
     }
   }
   .info {
@@ -44,31 +45,31 @@
       margin-bottom: 5px;
     }
     .price {
-      @include displayFlex(flex, flex-end, flex-end);
-      height: 50px;
+      height: 65px;
+      border-top: 1px solid $borderColor;
+      padding-top: 5px;
+      margin-top: 10px;
       .price-inner {
-        @include displayFlex(flex, flex-start, flex-start);
-        flex-direction: column;
-        color: $textDark;
+        @include displayFlex(flex, flex-start, space-between);
+        margin: 5px 0 0 0;
       }
-      .discount {
+      p {
+        margin-bottom: 0;
         font-size: 14px;
-        font-weight: 500;
-        color: $textSilver;
-        text-decoration: line-through;
-        line-height: normal;
+        color: $textGrey;
       }
       h6 {
-        font-size: 18px;
+        font-size: 16px;
         font-weight: 800;
         margin-bottom: 0;
         color: $textDark;
         line-height: normal;
-      }
-      .toman {
-        font-size: 14px;
-        font-weight: 400;
-        color: $textGrey;
+        .toman {
+          font-size: 14px;
+          font-weight: 400;
+          color: $textGrey;
+          margin-right: 5px;
+        }
       }
     }
   }
@@ -467,7 +468,7 @@
     }
     .list-category {
       .sub-list-category {
-        height: 200px;
+        height: 300px;
         overflow-y: auto;
         transition: all 0.2s ease-in-out;
         .sub-item {
